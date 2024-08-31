@@ -1,0 +1,19 @@
+@import url("./yl-reset.css");
+@import url("./yl-theme.css");
+@import url("./yl-animations.css");
+
+@layer yl-ui {
+  .yl-ripple {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.427);
+    transform: scale(0);
+    position: absolute;
+    opacity: 1;
+  }
+
+  .yl-ripple-animation {
+    animation: yl-ripple 0.6s linear;
+  }
+}

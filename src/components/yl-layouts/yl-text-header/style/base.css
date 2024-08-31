@@ -1,0 +1,69 @@
+/***************************yl-text-header********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+  .yl-text-header {
+    --yl-text-header-inline-size: auto;
+    --yl-text-header-block-size: auto;
+
+    --yl-text-header-padding: 0;
+    --yl-text-header-padding-inline: 0;
+    --yl-text-header-padding-inline-start: 0;
+    --yl-text-header-padding-inline-end: 0;
+    --yl-text-header-padding-block: 0;
+    --yl-text-header-padding-block-start: 0;
+    --yl-text-header-padding-block-end: 0;
+
+    --yl-text-header-margin: 0;
+    --yl-text-header-margin-inline: 0;
+    --yl-text-header-margin-inline-start: 0;
+    --yl-text-header-margin-inline-end: 0;
+    --yl-text-header-margin-block: 0;
+    --yl-text-header-margin-block-start: 0;
+    --yl-text-header-margin-block-end: 0;
+
+    --yl-text-header-color: black;
+    --yl-text-header-font-size: auto;
+    --yl-text-header-line-height: auto;
+    --yl-text-header-font-weight: auto;
+    --yl-text-header-font-family: auto;
+    --yl-text-header-text-transform: none;
+    --yl-text-header-text-shadow: none;
+    --yl-text-header-text-align: left;
+  }
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-text-header {
+    inline-size: var(--yl-text-header-inline-size);
+    block-size: var(--yl-text-header-block-size);
+
+    padding: var(--yl-text-header-padding);
+    padding-inline: var(--yl-text-header-padding-inline);
+    padding-inline-start: var(--yl-text-header-padding-inline-start);
+    padding-inline-end: var(--yl-text-header-padding-inline-end);
+    padding-block: var(--yl-text-header-padding-block);
+    padding-block-start: var(--yl-text-header-padding-block-start);
+    padding-block-end: var(--yl-text-header-padding-block-end);
+
+    margin: var(--yl-text-header-margin);
+    margin-inline: var(--yl-text-header-margin-inline);
+    margin-inline-start: var(--yl-text-header-margin-inline-start);
+    margin-inline-end: var(--yl-text-header-margin-inline-end);
+    margin-block: var(--yl-text-header-margin-block);
+    margin-block-start: var(--yl-text-header-margin-block-start);
+    margin-block-end: var(--yl-text-header-margin-block-end);
+
+    color: var(--yl-text-header-color);
+    font-size: var(--yl-text-header-font-size);
+    line-height: var(--yl-text-header-line-height);
+    font-weight: var(--yl-text-header-font-weight);
+    font-family: var(--yl-text-header-font-family);
+    text-transform: var(--yl-text-header-text-transform);
+    text-align: var(--yl-text-header-text-align);
+    text-shadow: var(--yl-text-header-text-shadow);
+  }
+}

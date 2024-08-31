@@ -1,0 +1,36 @@
+@layer yl-library {
+  .yl-search-input {
+    inline-size: 720px;
+    block-size: 60px;
+  }
+
+  .yl-search-input-container {
+    padding-inline: 4px;
+    border: 2px solid rgba(0, 0, 0, 0.285);
+    border-radius: 60px;
+  }
+
+  .yl-search-bar-button {
+    block-size: 48px;
+    border-radius: 60px;
+  }
+
+  .yl-search-input .yl-search-icon {
+    inline-size: 48px;
+    block-size: 100%;
+
+    margin-inline-start: 4px;
+
+    border-radius: 4px;
+
+    padding: 8px;
+
+    cursor: pointer;
+  }
+
+  .yl-search-menu {
+    padding: 20px;
+    background-color: #69afb4 !important;
+    border: 1px solid #50989d;
+  }
+}

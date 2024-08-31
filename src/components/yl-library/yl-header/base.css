@@ -1,0 +1,12 @@
+@layer yl-header {
+  .yl-header {
+    inline-size: 100%;
+    block-size: 40px;
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+
+    z-index: 1000;
+  }
+}

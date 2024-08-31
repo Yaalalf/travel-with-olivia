@@ -1,0 +1,42 @@
+/***************************yl-backdrop-filter********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-backdrop-filter {
+    --yl-backdrop-filter-inline-size: 100%;
+    --yl-backdrop-filter-block-size: 100%;
+
+    --yl-backdrop-filter-backdrop-filter: ;
+
+    --yl-backdrop-filter-position: absolute;
+    --yl-backdrop-filter-top: 0px;
+    --yl-backdrop-filter-left: 0px;
+    --yl-backdrop-filter-right: auto;
+    --yl-backdrop-filter-bottom: auto;
+
+    --yl-backdrop-filter-opacity: 1;
+    --yl-backdrop-z-index: auto;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-backdrop-filter {
+    inline-size: var(--yl-backdrop-filter-inline-size);
+    block-size: var(--yl-backdrop-filter-block-size);
+
+    backdrop-filter: var(--yl-backdrop-filter-backdrop-filter);
+
+    position: var(--yl-backdrop-filter-position);
+    top: var(--yl-backdrop-filter-top);
+    left: var(--yl-backdrop-filter-left);
+    right: var(--yl-backdrop-filter-right);
+    bottom: var(--yl-backdrop-filter-bottom);
+
+    opacity: var(--yl-backdrop-filter-opacity);
+    z-index: var(--yl-backdrop-z-index);
+  }
+}

@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (480px <= width < 600px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-480-600 : var(--yl-flex-container-flex-direction-360-1024);--yl-flex-container-align-items-480-600 : var(--yl-flex-container-align-items-360-1024);--yl-flex-container-justify-content-480-600 : var(--yl-flex-container-justify-content-360-1024);--yl-flex-container-gap-480-600 : var(--yl-flex-container-gap-360-1024);--yl-flex-container-flex-wrap-480-600 : var(--yl-flex-container-flex-wrap-360-1024); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-480-600);align-items: var(--yl-flex-container-align-items-480-600);justify-content: var(--yl-flex-container-justify-content-480-600);gap: var(--yl-flex-container-gap-480-600);flex-wrap: var(--yl-flex-container-flex-wrap-480-600); 
+      } 
+    } 
+  }

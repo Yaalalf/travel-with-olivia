@@ -1,0 +1,95 @@
+/***************************yl-container********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+  .yl-container {
+    --yl-container-inline-size: 100%;
+    --yl-container-block-size: 100%;
+
+    --yl-container-padding: 0;
+    --yl-container-padding-inline: 0;
+    --yl-container-padding-inline-start: 0;
+    --yl-container-padding-inline-end: 0;
+    --yl-container-padding-block: 0;
+    --yl-container-padding-block-start: 0;
+    --yl-container-padding-block-end: 0;
+
+    --yl-container-margin: 0;
+    --yl-container-margin-inline: 0;
+    --yl-container-margin-inline-start: 0;
+    --yl-container-margin-inline-end: 0;
+    --yl-container-margin-block: 0;
+    --yl-container-margin-block-start: 0;
+    --yl-container-margin-block-end: 0;
+
+    --yl-container-background-color: transparent;
+
+    --yl-container-border-radius: 0px;
+    --yl-container-border-start-start-radius: 0px;
+    --yl-container-border-start-end-radius: 0px;
+    --yl-container-border-end-start-radius: 0px;
+    --yl-container-border-end-end-radius: 0px;
+
+    --yl-container-border: none;
+    --yl-container-border-block: none;
+    --yl-container-border-block-start: none;
+    --yl-container-border-block-end: none;
+    --yl-container-border-inline: none;
+    --yl-container-border-inline-start: none;
+    --yl-container-border-inline-end: none;
+
+    --yl-container-box-shadow: none;
+    --yl-container-overflow: auto;
+
+    --yl-container-z-index: 1;
+  }
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-container {
+    inline-size: var(--yl-container-inline-size);
+    block-size: var(--yl-container-block-size);
+
+    padding: var(--yl-container-padding);
+    padding-inline: var(--yl-container-padding-inline);
+    padding-inline-start: var(--yl-container-padding-inline-start);
+    padding-inline-end: var(--yl-container-padding-inline-end);
+    padding-block: var(--yl-container-padding-block);
+    padding-block-start: var(--yl-container-padding-block-start);
+    padding-block-end: var(--yl-container-padding-block-end);
+
+    margin: var(--yl-container-margin);
+    margin-inline: var(--yl-container-margin-inline);
+    margin-inline-start: var(--yl-container-margin-inline-start);
+    margin-inline-end: var(--yl-container-margin-inline-end);
+    margin-block: var(--yl-container-margin-block);
+    margin-block-start: var(--yl-container-margin-block-start);
+    margin-block-end: var(--yl-container-margin-block-end);
+
+    background-color: var(--yl-container-background-color);
+
+    border-radius: var(--yl-container-border-radius);
+    border-start-start-radius: var(--yl-container-border-start-start-radius);
+    border-start-end-radius: var(--yl-container-border-start-end-radius);
+    border-end-start-radius: var(--yl-container-border-end-start-radius);
+    border-end-end-radius: var(--yl-container-border-end-end-radius);
+
+    border: var(--yl-container-border);
+    border-block: var(--yl-container-border-block);
+    border-block-start: var(--yl-container-border-block-start);
+    border-block-end: var(--yl-container-border-block-end);
+    border-inline: var(--yl-container-border-inline);
+    border-inline-start: var(--yl-container-border-inline-start);
+    border-inline-end: var(--yl-container-border-inline-end);
+
+    box-shadow: var(--yl-container-box-shadow);
+
+    overflow: var(--yl-container-overflow);
+    z-index: var(--yl-container-z-index);
+
+    position: relative;
+  }
+}

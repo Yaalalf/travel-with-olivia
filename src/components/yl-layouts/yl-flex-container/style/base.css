@@ -1,0 +1,29 @@
+/***************************yl-flex-container********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+  .yl-flex-container {
+    --yl-flex-container-flex-direction: row;
+    --yl-flex-container-align-items: center;
+    --yl-flex-container-justify-content: center;
+    --yl-flex-container-gap: 0;
+    --yl-flex-container-flex-wrap: no-wrap;
+  }
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-flex-container {
+    display: flex;
+
+    flex-direction: var(--yl-flex-container-flex-direction);
+    align-items: var(--yl-flex-container-align-items);
+    justify-content: var(--yl-flex-container-justify-content);
+    gap: var(--yl-flex-container-gap);
+    flex-wrap: var(--yl-flex-container-flex-wrap);
+
+    position: relative;
+  }
+}

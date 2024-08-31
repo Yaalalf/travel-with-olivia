@@ -1,0 +1,14 @@
+/***************************yl-flex-container-media-query********************************/
+/**********************************************************/
+/**********************************************************/
+@import url(desktop/1024-1920.css);
+@import url(desktop/1024-1280.css);
+@import url(desktop/1280-1440.css);
+@import url(desktop/1440-1600.css);
+@import url(desktop/1600-1920.css);
+
+@import url(mobile/360-1024.css);
+@import url(mobile/360-480.css);
+@import url(mobile/480-600.css);
+@import url(mobile/600-900.css);
+@import url(mobile/900-1024.css);

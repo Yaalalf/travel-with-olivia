@@ -1,0 +1,51 @@
+/***************************yl-decorator-image********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-decorator-image {
+    --yl-decorator-image-inline-size: 100%;
+    --yl-decorator-image-block-size: 100%;
+
+    --yl-decorator-image-background-image: url("/yl-img/yl-image-placeholder-transparent.png");
+    --yl-decorator-image-background-position: center;
+    --yl-decorator-image-background-position-x: center;
+    --yl-decorator-image-background-position-y: center;
+    --yl-decorator-image-background-size: contain;
+    --yl-decorator-image-background-repeat: no-repeat;
+
+    --yl-decorator-image-position: absolute;
+    --yl-decorator-image-top: auto;
+    --yl-decorator-image-left: auto;
+    --yl-decorator-image-right: auto;
+    --yl-decorator-image-bottom: auto;
+
+    --yl-decorator-z-index: auto;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-decorator-image {
+    inline-size: var(--yl-decorator-image-inline-size);
+    block-size: var(--yl-decorator-image-block-size);
+
+    background-image: var(--yl-decorator-image-background-image);
+
+    background-repeat: var(--yl-decorator-image-background-repeat);
+    background-position: var(--yl-decorator-image-background-position);
+    background-position-x: var(--yl-decorator-image-background-position-x);
+    background-position-y: var(--yl-decorator-image-background-position-y);
+    background-size: var(--yl-decorator-image-background-size);
+
+    position: var(--yl-decorator-image-position);
+    top: var(--yl-decorator-image-top);
+    left: var(--yl-decorator-image-left);
+    right: var(--yl-decorator-image-right);
+    bottom: var(--yl-decorator-image-bottom);
+
+    z-index: var(--yl-decorator-z-index);
+  }
+}

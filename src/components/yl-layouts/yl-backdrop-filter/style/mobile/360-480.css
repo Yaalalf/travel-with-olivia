@@ -1,0 +1,48 @@
+@layer yl-layout {
+  @media (360px <= width < 480px) {
+    /**********************Vars****************************/
+    /**********************************************************/
+    .yl-backdrop-filter {
+      --yl-backdrop-filter-inline-size-360-480: var(
+        --yl-backdrop-filter-inline-size-360-1024
+      );
+      --yl-backdrop-filter-block-size-360-480: var(
+        --yl-backdrop-filter-block-size-360-1024
+      );
+      --yl-backdrop-filter-backdrop-filter-360-480: var(
+        --yl-backdrop-filter-backdrop-filter-360-1024
+      );
+      --yl-backdrop-filter-position-360-480: var(
+        --yl-backdrop-filter-position-360-1024
+      );
+      --yl-backdrop-filter-top-360-480: var(--yl-backdrop-filter-top-360-1024);
+      --yl-backdrop-filter-left-360-480: var(
+        --yl-backdrop-filter-left-360-1024
+      );
+      --yl-backdrop-filter-right-360-480: var(
+        --yl-backdrop-filter-right-360-1024
+      );
+      --yl-backdrop-filter-bottom-360-480: var(
+        --yl-backdrop-filter-bottom-360-1024
+      );
+      --yl-backdrop-filter-opacity-360-480: var(
+        --yl-backdrop-filter-opacity-360-1024
+      );
+      --yl-backdrop-z-index-360-480: var(--yl-backdrop-z-index-360-1024);
+    }
+    /**************************Styles********************************/
+    /**********************************************************/
+    .yl-backdrop-filter {
+      inline-size: var(--yl-backdrop-filter-inline-size-360-480);
+      block-size: var(--yl-backdrop-filter-block-size-360-480);
+      backdrop-filter: var(--yl-backdrop-filter-backdrop-filter-360-480);
+      position: var(--yl-backdrop-filter-position-360-480);
+      top: var(--yl-backdrop-filter-top-360-480);
+      left: var(--yl-backdrop-filter-left-360-480);
+      right: var(--yl-backdrop-filter-right-360-480);
+      bottom: var(--yl-backdrop-filter-bottom-360-480);
+      opacity: var(--yl-backdrop-filter-opacity-360-480);
+      z-index: var(--yl-backdrop-filter-z-index-360-480);
+    }
+  }
+}

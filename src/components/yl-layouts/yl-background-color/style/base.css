@@ -1,0 +1,42 @@
+/***************************yl-background-color********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-background-color {
+    --yl-background-color-inline-size: 100%;
+    --yl-background-color-block-size: 100%;
+
+    --yl-background-color-background-color: white;
+
+    --yl-background-color-position: absolute;
+    --yl-background-color-top: auto;
+    --yl-background-color-left: auto;
+    --yl-background-color-right: auto;
+    --yl-background-color-bottom: auto;
+
+    --yl-background-color-opacity: 1;
+    --yl-background-z-index: auto;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-background-color {
+    inline-size: var(--yl-background-color-inline-size);
+    block-size: var(--yl-background-color-block-size);
+
+    background-color: var(--yl-background-color-background-color);
+
+    position: var(--yl-background-color-position);
+    top: var(--yl-background-color-top);
+    left: var(--yl-background-color-left);
+    right: var(--yl-background-color-right);
+    bottom: var(--yl-background-color-bottom);
+
+    opacity: var(--yl-background-color-opacity);
+    z-index: var(--yl-background-z-index);
+  }
+}

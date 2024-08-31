@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (600px <= width < 900px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-decorator-image{
+    --yl-decorator-image-inline-size-600-900 : var(--yl-decorator-image-inline-size-360-1024);--yl-decorator-image-block-size-600-900 : var(--yl-decorator-image-block-size-360-1024);--yl-decorator-image-background-image-600-900 : var(--yl-decorator-image-background-image-360-1024);--yl-decorator-image-background-position-600-900 : var(--yl-decorator-image-background-position-360-1024);--yl-decorator-image-background-position-x-600-900 : var(--yl-decorator-image-background-position-x-360-1024);--yl-decorator-image-background-position-y-600-900 : var(--yl-decorator-image-background-position-y-360-1024);--yl-decorator-image-background-size-600-900 : var(--yl-decorator-image-background-size-360-1024);--yl-decorator-image-background-repeat-600-900 : var(--yl-decorator-image-background-repeat-360-1024);--yl-decorator-image-position-600-900 : var(--yl-decorator-image-position-360-1024);--yl-decorator-image-top-600-900 : var(--yl-decorator-image-top-360-1024);--yl-decorator-image-left-600-900 : var(--yl-decorator-image-left-360-1024);--yl-decorator-image-right-600-900 : var(--yl-decorator-image-right-360-1024);--yl-decorator-image-bottom-600-900 : var(--yl-decorator-image-bottom-360-1024);--yl-decorator-z-index-600-900 : var(--yl-decorator-z-index-360-1024); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-decorator-image{
+    inline-size: var(--yl-decorator-image-inline-size-600-900);block-size: var(--yl-decorator-image-block-size-600-900);background-image: var(--yl-decorator-image-background-image-600-900);background-repeat: var(--yl-decorator-image-background-repeat-600-900);background-position: var(--yl-decorator-image-background-position-600-900);background-position-x: var(--yl-decorator-image-background-position-x-600-900);background-position-y: var(--yl-decorator-image-background-position-y-600-900);background-size: var(--yl-decorator-image-background-size-600-900);position: var(--yl-decorator-image-position-600-900);top: var(--yl-decorator-image-top-600-900);left: var(--yl-decorator-image-left-600-900);right: var(--yl-decorator-image-right-600-900);bottom: var(--yl-decorator-image-bottom-600-900);z-index: var(--yl-decorator-image-z-index-600-900); 
+      } 
+    } 
+  }

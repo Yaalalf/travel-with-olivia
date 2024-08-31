@@ -1,0 +1,123 @@
+@layer yl-ui {
+  .yl-input {
+    --yl-input-native-color: rgb(83, 83, 83);
+
+    display: inline-block;
+  }
+
+  .yl-input .yl-input-label {
+    margin-block-end: 0px;
+    padding-inline-start: 4px;
+    font-size: 16px;
+
+    font-weight: normal;
+  }
+
+  .yl-input .yl-input-container {
+    inline-size: 100%;
+    block-size: 100%;
+    display: flex;
+
+    overflow: hidden;
+  }
+
+  .yl-input .yl-input-content {
+    inline-size: 100%;
+    block-size: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: transparent;
+    border-radius: 4px;
+
+    cursor: text;
+
+    overflow: hidden;
+  }
+
+  .yl-input .yl-input-content .yl-input-prefix {
+    inline-size: auto;
+    block-size: 100%;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .yl-input .yl-input-content .yl-input-postfix {
+    inline-size: auto;
+    block-size: 100%;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-weight: 600;
+    color: rgb(62, 62, 65);
+  }
+
+  .yl-input .yl-input-body {
+    inline-size: 100%;
+    block-size: 100%;
+    flex-shrink: 1;
+  }
+
+  .yl-input .yl-input-content .yl-input-native {
+    inline-size: 100%;
+    block-size: 100%;
+
+    padding-inline: 8px;
+
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    color: var(--yl-input-native-color);
+
+    font-size: 16px;
+  }
+
+  .yl-input .yl-input-content .yl-input-native::placeholder {
+    font-weight: 500;
+    opacity: 0.5;
+    color: rgb(38, 39, 40);
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+
+  .yl-input .yl-input-content .yl-input-native::-webkit-outer-spin-button,
+  .yl-input .yl-input-content .yl-input-native::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+
+  .yl-input .yl-input-content input[type="number"].yl-input {
+    -moz-appearance: textfield;
+  }
+
+  /***************************style outline******************************/
+  .yl-input.yl-input-outline {
+    --yl-input-outline-border-color: rgb(129, 129, 129);
+  }
+
+  .yl-input.yl-input-outline .yl-input-content {
+    border: 2px solid var(--yl-input-outline-border-color);
+  }
+
+  .yl-input.yl-input-outline:has(.yl-input-native:focus) .yl-input-content {
+    outline: 1px solid var(--yl-input-outline-border-color);
+  }
+}

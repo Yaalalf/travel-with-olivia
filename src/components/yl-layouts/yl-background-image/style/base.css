@@ -1,0 +1,53 @@
+/***************************yl-background-image********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-background-image {
+    --yl-background-image-inline-size: 100%;
+    --yl-background-image-block-size: 100%;
+
+    --yl-background-image-background-image: url("/yl-img/yl-image-placeholder-transparent.png");
+    --yl-background-image-background-position: center;
+    --yl-background-image-background-position-x: center;
+    --yl-background-image-background-position-y: center;
+    --yl-background-image-background-size: contain;
+    --yl-background-image-background-repeat: no-repeat;
+
+    --yl-background-image-position: absolute;
+    --yl-background-image-top: auto;
+    --yl-background-image-left: auto;
+    --yl-background-image-right: auto;
+    --yl-background-image-bottom: auto;
+
+    --yl-background-z-index: auto;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-background-image {
+    inline-size: var(--yl-background-image-inline-size);
+    block-size: var(--yl-background-image-block-size);
+
+    background-color: #e5ecf0;
+
+    background-image: var(--yl-background-image-background-image);
+
+    background-repeat: var(--yl-background-image-background-repeat);
+    background-position: var(--yl-background-image-background-position);
+    background-position-x: var(--yl-background-image-background-position-x);
+    background-position-y: var(--yl-background-image-background-position-y);
+    background-size: var(--yl-background-image-background-size);
+
+    position: var(--yl-background-image-position);
+    top: var(--yl-background-image-top);
+    left: var(--yl-background-image-left);
+    right: var(--yl-background-image-right);
+    bottom: var(--yl-background-image-bottom);
+
+    z-index: var(--yl-background-z-index);
+  }
+}

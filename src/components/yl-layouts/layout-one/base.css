@@ -1,0 +1,121 @@
+@layer yl-layout-one {
+  .yl-layout-one {
+    --background-image-url: auto;
+    --background-image-position-x: auto;
+    --background-image-position-y: auto;
+    --background-image-size: 100%;
+  }
+
+  .yl-layout-one {
+    inline-size: 100%;
+    block-size: 660px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+  }
+
+  .yl-layout-one .yl-container {
+    inline-size: 50%;
+    block-size: 100%;
+  }
+
+  .yl-layout-one .yl-container.left {
+    z-index: 2;
+    position: relative;
+  }
+
+  .yl-layout-one .yl-container.right {
+    background-image: var(--background-image-url);
+    background-repeat: no-repeat;
+    background-position-x: var(--background-image-position-x);
+    background-position-y: var(--background-image-position-y);
+    background-size: var(--background-image-size);
+  }
+
+  .yl-layout-one .yl-container.left .yl-content {
+    inline-size: 100%;
+    block-size: 100%;
+    padding-block-start: 120px;
+    padding-inline-start: 80px;
+    background-color: white;
+    position: relative;
+    z-index: 3;
+  }
+  .yl-layout-one .yl-container.left .yl-content .List {
+    margin-block-start: 180px;
+  }
+
+  .yl-layout-one .yl-container.left .yl-content .items {
+    inline-size: 240px;
+    block-size: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    overflow: hidden;
+    box-shadow: 0px 10px 6px rgba(0, 0, 0, 0.183);
+  }
+  .yl-layout-one .yl-container.left .yl-content .items .Content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+
+    background-image: linear-gradient(
+      to top,
+      rgba(47, 42, 42, 0.596),
+      rgba(0, 0, 0, 0)
+    );
+  }
+  .yl-layout-one .yl-container.left .yl-content .items .Title {
+  }
+
+  .yl-layout-one .yl-container.left .yl-decorated-delimiter {
+    mix-blend-mode: hard-light;
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.436));
+  }
+
+  .yl-layout-one .yl-decorated-image {
+    z-index: 3;
+  }
+
+  .SearchBar {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .Menu {
+    block-size: 300px !important;
+    overflow-y: scroll !important;
+  }
+
+  .List {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .ItemSearch {
+    inline-size: 100%;
+    block-size: 60px;
+
+    gap: 4px;
+
+    display: flex;
+  }
+
+  .yl-start-rate-icon {
+    inline-size: 20px !important;
+    block-size: 20px !important;
+  }
+}

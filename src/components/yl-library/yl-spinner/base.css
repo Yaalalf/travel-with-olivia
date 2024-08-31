@@ -1,0 +1,41 @@
+/***************************yl-spinner********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-ui {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-spinner {
+    --yl-spinner-base-width: 9.6px;
+    --yl-spinner-color: currentColor;
+    --yl-spinner-size: 2;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-spinner {
+    width: calc(var(--yl-spinner-base-width) * var(--yl-spinner-size));
+    height: calc(var(--yl-spinner-base-width) * var(--yl-spinner-size));
+    border: calc(1px * var(--yl-spinner-size)) solid var(--yl-spinner-color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    flex-shrink: 0;
+  }
+
+  /******************************Inner Utils****************************/
+  /**********************************************************/
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

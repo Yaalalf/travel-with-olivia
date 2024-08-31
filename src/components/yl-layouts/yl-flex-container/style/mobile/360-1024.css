@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (360px <= width < 1024px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-360-1024 : var(--yl-flex-container-flex-direction);--yl-flex-container-align-items-360-1024 : var(--yl-flex-container-align-items);--yl-flex-container-justify-content-360-1024 : var(--yl-flex-container-justify-content);--yl-flex-container-gap-360-1024 : var(--yl-flex-container-gap);--yl-flex-container-flex-wrap-360-1024 : var(--yl-flex-container-flex-wrap); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-360-1024);align-items: var(--yl-flex-container-align-items-360-1024);justify-content: var(--yl-flex-container-justify-content-360-1024);gap: var(--yl-flex-container-gap-360-1024);flex-wrap: var(--yl-flex-container-flex-wrap-360-1024); 
+      } 
+    } 
+  }

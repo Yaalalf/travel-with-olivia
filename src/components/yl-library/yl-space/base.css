@@ -1,0 +1,7 @@
+@layer yl-space {
+  .yl-space {
+    inline-size: 10px;
+    block-size: 100%;
+    flex-grow: 1;
+  }
+}

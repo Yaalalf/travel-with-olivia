@@ -1,0 +1,84 @@
+@layer yl-ui {
+  /***************Box sizing************************/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /***************Margin and padding************************/
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /***************Font Family************************/
+  * {
+    font-family: sans-serif;
+  }
+  /***************List decoration************************/
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+
+  /***************Scroll behavior************************/
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+  /***************Link underline************************/
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+
+  /***************Image and video settings************************/
+  img,
+  picture,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /***************Inputs************************/
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+
+  /***************Prefers reduced motion************************/
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+      transition: none;
+    }
+  }
+
+  /***************The Body and The HTML elements************************/
+  body,
+  html {
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+}

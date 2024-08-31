@@ -1,0 +1,214 @@
+@import url("./../components/yl-utils/yl-globals.css");
+
+:root {
+  --primary-color: #00b7cd;
+  --primary-color-dark: #03464f;
+  --secondary-color: #c49a6c;
+  --secondary-color-dark: #967755;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url(/fonts/Nunito-VariableFont_wght.ttf);
+  weight: 500;
+}
+
+/*****************************Animations******************************/
+@keyframes fadeIn {
+  from {
+    filter: blur(100px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  to {
+    filter: blur(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInSmall {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutSmall {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeftIn {
+  from {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftInSmall {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftOut {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeftOutSmall {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideRightIn {
+  from {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightInSmall {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRightOut {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideRightOutSmall {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes scalePending {
+  from {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleInTop {
+  from {
+    transform-origin: top center;
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform-origin: top center;
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes scaleOutTop {
+  from {
+    transform-origin: top center;
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  to {
+    transform-origin: top center;
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+}
+@keyframes slideRightOutSmall {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}

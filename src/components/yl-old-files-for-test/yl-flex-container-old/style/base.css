@@ -1,0 +1,69 @@
+/***************************yl-flex-container********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+  .yl-flex-container {
+    --yl-flex-container-inline-size: auto;
+    --yl-flex-container-block-size: auto;
+
+    --yl-flex-container-padding: 0;
+    --yl-flex-container-padding-inline: 0;
+    --yl-flex-container-padding-inline-start: 0;
+    --yl-flex-container-padding-inline-end: 0;
+    --yl-flex-container-padding-block: 0;
+    --yl-flex-container-padding-block-start: 0;
+    --yl-flex-container-padding-block-end: 0;
+
+    --yl-flex-container-margin: 0;
+    --yl-flex-container-margin-inline: 0;
+    --yl-flex-container-margin-inline-start: 0;
+    --yl-flex-container-margin-inline-end: 0;
+    --yl-flex-container-margin-block: 0;
+    --yl-flex-container-margin-block-start: 0;
+    --yl-flex-container-margin-block-end: 0;
+
+    --yl-flex-container-flex-direction: row;
+    --yl-flex-container-align-items: center;
+    --yl-flex-container-justify-content: center;
+    --yl-flex-container-gap: 0;
+    --yl-flex-container-flex-wrap: no-wrap;
+    --yl-flex-container-z-index: 1;
+  }
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-flex-container {
+    inline-size: var(--yl-flex-container-inline-size);
+    block-size: var(--yl-flex-container-block-size);
+
+    padding: var(--yl-flex-container-padding);
+    padding-inline: var(--yl-flex-container-padding-inline);
+    padding-inline-start: var(--yl-flex-container-padding-inline-start);
+    padding-inline-end: var(--yl-flex-container-padding-inline-end);
+    padding-block: var(--yl-flex-container-padding-block);
+    padding-block-start: var(--yl-flex-container-padding-block-start);
+    padding-block-end: var(--yl-flex-container-padding-block-end);
+
+    margin: var(--yl-flex-container-margin);
+    margin-inline: var(--yl-flex-container-margin-inline);
+    margin-inline-start: var(--yl-flex-container-margin-inline-start);
+    margin-inline-end: var(--yl-flex-container-margin-inline-end);
+    margin-block: var(--yl-flex-container-margin-block);
+    margin-block-start: var(--yl-flex-container-margin-block-start);
+    margin-block-end: var(--yl-flex-container-margin-block-end);
+
+    display: flex;
+
+    flex-direction: var(--yl-flex-container-flex-direction);
+    align-items: var(--yl-flex-container-align-items);
+    justify-content: var(--yl-flex-container-justify-content);
+    gap: var(--yl-flex-container-gap);
+    flex-wrap: var(--yl-flex-container-flex-wrap);
+
+    z-index: var(--yl-flex-container-z-index);
+    position: relative;
+  }
+}

@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (1440px <= width < 1600px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-backdrop-filter{
+    --yl-backdrop-filter-inline-size-1440-1600 : var(--yl-backdrop-filter-inline-size-1024-1920);--yl-backdrop-filter-block-size-1440-1600 : var(--yl-backdrop-filter-block-size-1024-1920);--yl-backdrop-filter-backdrop-filter-1440-1600 : var(--yl-backdrop-filter-backdrop-filter-1024-1920);--yl-backdrop-filter-position-1440-1600 : var(--yl-backdrop-filter-position-1024-1920);--yl-backdrop-filter-top-1440-1600 : var(--yl-backdrop-filter-top-1024-1920);--yl-backdrop-filter-left-1440-1600 : var(--yl-backdrop-filter-left-1024-1920);--yl-backdrop-filter-right-1440-1600 : var(--yl-backdrop-filter-right-1024-1920);--yl-backdrop-filter-bottom-1440-1600 : var(--yl-backdrop-filter-bottom-1024-1920);--yl-backdrop-filter-opacity-1440-1600 : var(--yl-backdrop-filter-opacity-1024-1920);--yl-backdrop-z-index-1440-1600 : var(--yl-backdrop-z-index-1024-1920); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-backdrop-filter{
+    inline-size: var(--yl-backdrop-filter-inline-size-1440-1600);block-size: var(--yl-backdrop-filter-block-size-1440-1600);backdrop-filter: var(--yl-backdrop-filter-backdrop-filter-1440-1600);position: var(--yl-backdrop-filter-position-1440-1600);top: var(--yl-backdrop-filter-top-1440-1600);left: var(--yl-backdrop-filter-left-1440-1600);right: var(--yl-backdrop-filter-right-1440-1600);bottom: var(--yl-backdrop-filter-bottom-1440-1600);opacity: var(--yl-backdrop-filter-opacity-1440-1600);z-index: var(--yl-backdrop-filter-z-index-1440-1600); 
+      } 
+    } 
+  }

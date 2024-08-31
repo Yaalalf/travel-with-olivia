@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (480px <= width < 600px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-background-image{
+    --yl-background-image-inline-size-480-600 : var(--yl-background-image-inline-size-360-1024);--yl-background-image-block-size-480-600 : var(--yl-background-image-block-size-360-1024);--yl-background-image-background-image-480-600 : var(--yl-background-image-background-image-360-1024);--yl-background-image-background-position-480-600 : var(--yl-background-image-background-position-360-1024);--yl-background-image-background-position-x-480-600 : var(--yl-background-image-background-position-x-360-1024);--yl-background-image-background-position-y-480-600 : var(--yl-background-image-background-position-y-360-1024);--yl-background-image-background-size-480-600 : var(--yl-background-image-background-size-360-1024);--yl-background-image-background-repeat-480-600 : var(--yl-background-image-background-repeat-360-1024);--yl-background-image-position-480-600 : var(--yl-background-image-position-360-1024);--yl-background-image-top-480-600 : var(--yl-background-image-top-360-1024);--yl-background-image-left-480-600 : var(--yl-background-image-left-360-1024);--yl-background-image-right-480-600 : var(--yl-background-image-right-360-1024);--yl-background-image-bottom-480-600 : var(--yl-background-image-bottom-360-1024);--yl-background-z-index-480-600 : var(--yl-background-z-index-360-1024); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-background-image{
+    inline-size: var(--yl-background-image-inline-size-480-600);block-size: var(--yl-background-image-block-size-480-600);background-image: var(--yl-background-image-background-image-480-600);background-repeat: var(--yl-background-image-background-repeat-480-600);background-position: var(--yl-background-image-background-position-480-600);background-position-x: var(--yl-background-image-background-position-x-480-600);background-position-y: var(--yl-background-image-background-position-y-480-600);background-size: var(--yl-background-image-background-size-480-600);position: var(--yl-background-image-position-480-600);top: var(--yl-background-image-top-480-600);left: var(--yl-background-image-left-480-600);right: var(--yl-background-image-right-480-600);bottom: var(--yl-background-image-bottom-480-600);z-index: var(--yl-background-image-z-index-480-600); 
+      } 
+    } 
+  }

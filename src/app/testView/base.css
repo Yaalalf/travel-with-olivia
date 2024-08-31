@@ -1,0 +1,14 @@
+.Main {
+  padding: 40px;
+  inline-size: 100vw;
+
+  display: flex;
+
+  flex-direction: column;
+  gap: 40px;
+}
+
+.Container {
+  display: flex;
+  gap: 12px;
+}
