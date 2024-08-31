@@ -24,10 +24,6 @@ export default function YLCalendar() {
   );
 }
 
-function onChangeMonth(value: EMonth) {
-  set;
-}
-
 enum EMonth {
   JANUARY = "January",
   FEBRUARY = "February",
