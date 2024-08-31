@@ -27,6 +27,9 @@
   }
 
   /***************Link underline************************/
+  a {
+    text-decoration: none;
+  }
   a:not([class]) {
     text-decoration-skip-ink: auto;
   }

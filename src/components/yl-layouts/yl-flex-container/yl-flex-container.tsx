@@ -13,6 +13,8 @@ export default function YLFlexContainer({
   children,
   className,
 
+  onClick,
+
   inlineSize,
   blockSize,
 
@@ -100,6 +102,9 @@ export default function YLFlexContainer({
     overflow,
     zIndex,
   };
+  const domProps = {
+    onClick,
+  };
 
   const { styles } = useYLComponentStyleMediaQueryVars<
     YLFlexContainerStyle,
@@ -119,6 +124,7 @@ export default function YLFlexContainer({
     <YLContainer
       className={`yl-flex-container ${className || ""}`}
       {...stylesExtendedProps}
+      {...domProps}
       extendedStyles={styles}
     >
       {children}

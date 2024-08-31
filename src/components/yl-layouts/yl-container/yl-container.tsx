@@ -22,6 +22,8 @@ export default function YLContainer({
   className,
   tag = ETag.div,
 
+  onClick,
+
   inlineSize,
   blockSize,
 
@@ -121,12 +123,13 @@ export default function YLContainer({
       children,
       className,
       tag,
+      onClick,
     },
     { ...styles, ...extendedStyles }
   );
 }
 function ContainerFactory(
-  props: Pick<IYLContainerProps, "children" | "className" | "tag">,
+  props: Pick<IYLContainerProps, "children" | "className" | "tag" | "onClick">,
   styles: YLComponentMediaQueryStyle<YLContainerStyle>
 ): ReactNode {
   switch (props.tag) {
@@ -135,6 +138,7 @@ function ContainerFactory(
         <div
           className={`yl-container ${props.className || ""}`}
           style={styles as CSSProperties}
+          onClick={props.onClick}
         >
           {props.children}
         </div>
@@ -144,6 +148,7 @@ function ContainerFactory(
         <section
           className={`yl-container ${props.className || ""}`}
           style={styles as CSSProperties}
+          onClick={props.onClick}
         >
           {props.children}
         </section>
@@ -153,6 +158,7 @@ function ContainerFactory(
         <article
           className={`yl-container ${props.className || ""}`}
           style={styles as CSSProperties}
+          onClick={props.onClick}
         >
           {props.children}
         </article>

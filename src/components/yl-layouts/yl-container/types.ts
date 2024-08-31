@@ -10,8 +10,10 @@ import {
   IChildren,
   IClassName,
   IDimension,
+  IEvent,
   IExtendedStyle,
   IFlex,
+  IKey,
   IMargin,
   IOverflow,
   IPadding,
@@ -68,6 +70,7 @@ export interface IYLContainerProps
     IClassName,
     Partial<IChildren>,
     ITag,
+    IEvent,
     IExtendedStyle {}
 
 export interface IYLContainerStyleProps

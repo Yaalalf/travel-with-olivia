@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 import { EYLMediaQueryBreakPoints } from "./yl-global-enums";
 
 /*********************************LOGIC UTILITY INTERFACES********************/
@@ -18,6 +18,17 @@ export interface IChildren {
 export interface IClassName {
   className?: string;
 }
+
+/*******************************Key*****************************************/
+export interface IKey {
+  key?: string;
+}
+
+/*******************************IEvent*****************************************/
+export interface IEvent {
+  onClick?: (event: MouseEvent) => void;
+}
+
 /*******************************ClassName*****************************************/
 export interface ITag {
   tag?: ETag;

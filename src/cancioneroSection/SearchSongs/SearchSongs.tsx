@@ -1,3 +1,4 @@
+"use client";
 import { YLBackdropFilter } from "@/components/yl-layouts/yl-backdrop-filter/yl-backdrop-filter";
 import { YLBackgroundColor } from "@/components/yl-layouts/yl-background-color/yl-background-color";
 import { YLBackgroundImage } from "@/components/yl-layouts/yl-background-image/yl-background-image";
@@ -7,9 +8,12 @@ import { EYLTextHeaderTextAlign } from "@/components/yl-layouts/yl-text-header/t
 import YLTextHeader from "@/components/yl-layouts/yl-text-header/yl-text-header";
 import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
-import { Fragment } from "react";
+import Link from "next/link";
+import { useSongs } from "../context/songs-context";
 
 export default function SearchSongs() {
+  const songs = useSongs();
+
   return (
     <section className="SearchSongs">
       <YLContainer inlineSize="100%" blockSize="360px">
@@ -60,74 +64,52 @@ export default function SearchSongs() {
         paddingBlock="60px"
         gap="12px"
       >
-        {data
+        {songs
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((song) => (
-            <Fragment key={song.name}>
-              <YLFlexContainer
-                inlineSize="300px"
-                blockSize="80px"
-                borderRadius="12px"
-                backgroundColor="#fff"
-                flexDirection="column"
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                padding="12px"
-                boxShadow="0px 3px 3px #00000033"
+            <YLFlexContainer
+              key={song.name}
+              inlineSize="300px"
+              blockSize="80px"
+              borderRadius="12px"
+              backgroundColor="#fff"
+              boxShadow="0px 3px 3px #00000033"
+            >
+              <Link
+                style={{ inlineSize: "100%", blockSize: "100%" }}
+                href={`/cancionero/${song.name}`}
+                key={song.name}
               >
-                <YLTextHeader
-                  tag={ETag.h3}
-                  fontSize="16px"
-                  fontWeight="800"
-                  fontFamily="Nunito"
+                <YLFlexContainer
+                  inlineSize="100%"
+                  blockSize="100%"
+                  padding="12px"
+                  flexDirection="column"
+                  justifyContent="flex-start"
+                  alignItems="flex-start"
                 >
-                  {song.name}
-                </YLTextHeader>
-                <YLText
-                  tag={ETag.span}
-                  fontSize="16px"
-                  fontWeight="400"
-                  fontFamily="Nunito"
-                  color="#555"
-                >
-                  {song.type}
-                </YLText>
-              </YLFlexContainer>
-            </Fragment>
+                  <YLTextHeader
+                    tag={ETag.h3}
+                    fontSize="16px"
+                    fontWeight="800"
+                    fontFamily="Nunito"
+                  >
+                    {song.name}
+                  </YLTextHeader>
+                  <YLText
+                    tag={ETag.span}
+                    fontSize="16px"
+                    fontWeight="400"
+                    fontFamily="Nunito"
+                    color="#555"
+                  >
+                    {song.type}
+                  </YLText>
+                </YLFlexContainer>
+              </Link>
+            </YLFlexContainer>
           ))}
       </YLFlexContainer>
     </section>
   );
 }
-
-const data = [
-  { name: "Alaba", type: "alabanza" },
-  { name: "Hay libertad en la casa de Dios", type: "alabanza" },
-  { name: "Movimiento de gloria", type: "alabanza" },
-  { name: "Quita la tristeza de tu corazón", type: "alabanza" },
-  { name: "Danzando en cada temporada", type: "alabanza" },
-  { name: "Esta es la razón", type: "alabanza" },
-  { name: "Ola de Avivamiento", type: "alabanza" },
-  { name: "Jubileo", type: "alabanza" },
-  { name: "Jubilo", type: "alabanza" },
-  { name: "No  hay nadie como Jesús", type: "alabanza" },
-  { name: "Freedom", type: "alabanza" },
-  { name: "Gracia sublime es", type: "alabanza" },
-  { name: "Jericó", type: "alabanza" },
-  { name: "Celebrad a Cristo", type: "alabanza" },
-  { name: "Eterno", type: "alabanza" },
-  { name: "Tu hijo soy", type: "alabanza" },
-  { name: "Que no pare la alabanza", type: "alabanza" },
-  { name: "Todo cambió", type: "alabanza" },
-  { name: "Bueno es", type: "alabanza" },
-  { name: "Eres todo poderoso", type: "alabanza" },
-  { name: "Tu pueblo dice gracia", type: "alabanza" },
-  { name: "Te doy gloria", type: "alabanza" },
-  { name: "Llena la tierra con tu gloria", type: "alabanza" },
-  { name: "Bautizados en fuego", type: "alabanza" },
-  { name: "Nadie", type: "alabanza" },
-  { name: "Alábenle", type: "alabanza" },
-  { name: "Los muros caerán", type: "alabanza" },
-  { name: "Grande es el Señor", type: "alabanza" },
-  { name: "Fuego ha bajado del cielo", type: "alabanza" },
-];
