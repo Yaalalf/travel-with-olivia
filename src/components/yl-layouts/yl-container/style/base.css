@@ -41,8 +41,14 @@
     --yl-container-border-inline-start: none;
     --yl-container-border-inline-end: none;
 
+    --yl-container-position: relative;
+    --yl-container-top: none;
+    --yl-container-left: none;
+    --yl-container-right: none;
+    --yl-container-bottom: none;
+
     --yl-container-box-shadow: none;
-    --yl-container-overflow: auto;
+    --yl-container-overflow: visible;
 
     --yl-container-z-index: 1;
   }
@@ -85,11 +91,15 @@
     border-inline-start: var(--yl-container-border-inline-start);
     border-inline-end: var(--yl-container-border-inline-end);
 
+    position: var(--yl-container-position);
+    left: var(--yl-container-left);
+    top: var(--yl-container-top);
+    right: var(--yl-container-right);
+    bottom: var(--yl-container-bottom);
+
     box-shadow: var(--yl-container-box-shadow);
 
     overflow: var(--yl-container-overflow);
     z-index: var(--yl-container-z-index);
-
-    position: relative;
   }
 }

@@ -48,6 +48,12 @@ export default function YLFlexContainer({
   borderStartEndRadius,
   borderStartStartRadius,
 
+  bottom,
+  left,
+  position,
+  right,
+  top,
+
   backgroundColor,
   boxShadow,
 
@@ -95,6 +101,12 @@ export default function YLFlexContainer({
     borderEndStartRadius,
     borderStartEndRadius,
     borderStartStartRadius,
+
+    bottom,
+    left,
+    position,
+    right,
+    top,
 
     backgroundColor,
     boxShadow,

@@ -16,6 +16,7 @@ import {
   IMargin,
   IOverflow,
   IPadding,
+  IPosition,
   IYLMediaQuery,
   IZIndex,
 } from "@/components/yl-utils/yl-global-interfaces";
@@ -52,6 +53,7 @@ export interface IYLFlexContainerStyleProps
     IBorder,
     IBoxShadow,
     IBackgroundColor,
+    IPosition,
     IFlex,
     IOverflow,
     IZIndex,

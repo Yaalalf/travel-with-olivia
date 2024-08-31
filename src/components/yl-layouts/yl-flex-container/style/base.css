@@ -23,7 +23,5 @@
     justify-content: var(--yl-flex-container-justify-content);
     gap: var(--yl-flex-container-gap);
     flex-wrap: var(--yl-flex-container-flex-wrap);
-
-    position: relative;
   }
 }

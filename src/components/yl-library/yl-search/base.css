@@ -1,6 +1,6 @@
 @layer yl-library {
   .yl-search-input {
-    inline-size: 720px;
+    inline-size: 100%;
     block-size: 60px;
   }
 

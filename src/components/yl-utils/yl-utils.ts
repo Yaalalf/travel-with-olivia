@@ -10,6 +10,7 @@ import {
   IPadding,
   YLMediaQueryBreakPoints,
   IBorderRadius,
+  IBorder,
 } from "./yl-global-interfaces";
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -324,47 +325,45 @@ export function initPaddingValues(props: IPadding) {
 
 export function initMarginValues(props: IMargin) {
   if (props.margin) {
-    let paddingPositionValues = infer4ValuesFromCSSPropString(props.margin);
+    let marginPositionValues = infer4ValuesFromCSSPropString(props.margin);
 
     if (!props.marginBlockStart) {
-      props.marginBlockStart = paddingPositionValues[0];
+      props.marginBlockStart = marginPositionValues[0];
     }
     if (!props.marginInlineEnd) {
-      props.marginInlineEnd = paddingPositionValues[1];
+      props.marginInlineEnd = marginPositionValues[1];
     }
     if (!props.marginBlockEnd) {
-      props.marginBlockEnd = paddingPositionValues[2];
+      props.marginBlockEnd = marginPositionValues[2];
     }
     if (!props.marginInlineStart) {
-      props.marginInlineStart = paddingPositionValues[3];
+      props.marginInlineStart = marginPositionValues[3];
     }
   }
 
   if (props.marginBlock) {
-    let paddingPositionValues = infer2ValuesFromCSSPropString(
-      props.marginBlock
-    );
+    let marginPositionValues = infer2ValuesFromCSSPropString(props.marginBlock);
 
     if (!props.marginBlockStart) {
-      props.marginBlockStart = paddingPositionValues[0];
+      props.marginBlockStart = marginPositionValues[0];
     }
 
     if (!props.marginBlockEnd) {
-      props.marginBlockEnd = paddingPositionValues[1];
+      props.marginBlockEnd = marginPositionValues[1];
     }
   }
 
   if (props.marginInline) {
-    let paddingPositionValues = infer2ValuesFromCSSPropString(
+    let marginPositionValues = infer2ValuesFromCSSPropString(
       props.marginInline
     );
 
     if (!props.marginInlineStart) {
-      props.marginInlineStart = paddingPositionValues[0];
+      props.marginInlineStart = marginPositionValues[0];
     }
 
     if (!props.marginInlineEnd) {
-      props.marginInlineEnd = paddingPositionValues[1];
+      props.marginInlineEnd = marginPositionValues[1];
     }
   }
 }
@@ -374,24 +373,65 @@ export function initMarginValues(props: IMargin) {
 //////////////////////////////////////////////////////////////////
 export function initBorderRadiusValues(props: IBorderRadius) {
   if (props.borderRadius) {
-    let paddingPositionValues = infer4ValuesFromCSSPropString(
+    let borderRadiusPositionValues = infer4ValuesFromCSSPropString(
       props.borderRadius
     );
 
     if (!props.borderStartStartRadius) {
-      props.borderStartStartRadius = paddingPositionValues[0];
+      props.borderStartStartRadius = borderRadiusPositionValues[0];
     }
     if (!props.borderStartEndRadius) {
-      props.borderStartEndRadius = paddingPositionValues[1];
+      props.borderStartEndRadius = borderRadiusPositionValues[1];
     }
     if (!props.borderEndEndRadius) {
-      props.borderEndEndRadius = paddingPositionValues[2];
+      props.borderEndEndRadius = borderRadiusPositionValues[2];
     }
     if (!props.borderEndStartRadius) {
-      props.borderEndStartRadius = paddingPositionValues[3];
+      props.borderEndStartRadius = borderRadiusPositionValues[3];
     }
   }
 }
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+export function initBorderValues(props: IBorder) {
+  if (props.border) {
+    if (!props.borderBlockStart) {
+      props.borderBlockStart = props.border;
+    }
+    if (!props.borderInlineEnd) {
+      props.borderInlineEnd = props.border;
+    }
+    if (!props.borderBlockEnd) {
+      props.borderBlockEnd = props.border;
+    }
+    if (!props.borderInlineStart) {
+      props.borderInlineStart = props.border;
+    }
+  }
+
+  if (props.borderBlock) {
+    if (!props.borderBlockStart) {
+      props.borderBlockStart = props.borderBlock;
+    }
+
+    if (!props.borderBlockEnd) {
+      props.borderBlockEnd = props.borderBlock;
+    }
+  }
+
+  if (props.borderInline) {
+    if (!props.borderInlineStart) {
+      props.borderInlineStart = props.borderInline;
+    }
+
+    if (!props.borderInlineEnd) {
+      props.borderInlineEnd = props.borderInline;
+    }
+  }
+}
+
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////

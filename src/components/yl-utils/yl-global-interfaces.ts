@@ -30,6 +30,13 @@ export interface IEvent {
 }
 
 /*******************************ClassName*****************************************/
+export interface ITagContainer {
+  tag?: TagContainer | ETag;
+}
+export type TagTextHeader = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type TagText = "p" | "span";
+export type TagContainer = "div" | "section" | "article";
+
 export interface ITag {
   tag?: ETag;
 }

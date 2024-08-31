@@ -10,12 +10,16 @@ import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
 import Link from "next/link";
 import { useSongs } from "../context/songs-context";
+import YLSearch from "@/components/yl-library/yl-search/yl-search";
+import { useState } from "react";
 
 export default function SearchSongs() {
   const songs = useSongs();
+  const [filterSongs, setFilterSongs] = useState(songs);
+  const [search, setSearch] = useState("");
 
   return (
-    <section className="SearchSongs">
+    <YLContainer tag="section">
       <YLContainer inlineSize="100%" blockSize="360px">
         <YLBackgroundImage
           backgroundImage={`url("/cancionero/Piano.jpeg")`}
@@ -59,18 +63,40 @@ export default function SearchSongs() {
         </YLFlexContainer>
       </YLContainer>
       <YLFlexContainer
+        inlineSize="100%"
+        paddingBlock="20px"
+        paddingInline="20px"
+        position="sticky"
+        top="0px"
+        left="0px"
+        zIndex="3"
+        backgroundColor="white"
+      >
+        <YLSearch
+          value={search}
+          field="name"
+          onChange={(value) => setSearch(value)}
+          onSearch={(list) => {
+            setFilterSongs(list);
+          }}
+          dataset={songs}
+        />
+      </YLFlexContainer>
+
+      <YLFlexContainer
         flexDirection="column"
         inlineSize="100%"
-        paddingBlock="60px"
+        paddingBlock="40px"
         gap="12px"
       >
-        {songs
+        {filterSongs
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((song) => (
             <YLFlexContainer
               key={song.name}
               inlineSize="300px"
               blockSize="80px"
+              border="1px solid #00000033"
               borderRadius="12px"
               backgroundColor="#fff"
               boxShadow="0px 3px 3px #00000033"
@@ -110,6 +136,6 @@ export default function SearchSongs() {
             </YLFlexContainer>
           ))}
       </YLFlexContainer>
-    </section>
+    </YLContainer>
   );
 }

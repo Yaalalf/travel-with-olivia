@@ -10,6 +10,7 @@ import {
 } from "./types";
 import {
   initBorderRadiusValues,
+  initBorderValues,
   initMarginValues,
   initPaddingValues,
 } from "@/components/yl-utils/yl-utils";
@@ -56,6 +57,12 @@ export default function YLContainer({
   borderEndStartRadius,
   borderStartEndRadius,
   borderStartStartRadius,
+
+  bottom,
+  left,
+  position,
+  right,
+  top,
 
   backgroundColor,
 
@@ -105,6 +112,12 @@ export default function YLContainer({
       borderStartEndRadius,
       borderStartStartRadius,
 
+      bottom,
+      left,
+      position,
+      right,
+      top,
+
       backgroundColor,
       boxShadow,
 
@@ -116,6 +129,7 @@ export default function YLContainer({
       initPaddingValues(props);
       initMarginValues(props);
       initBorderRadiusValues(props);
+      initBorderValues(props);
     },
   });
   return ContainerFactory(

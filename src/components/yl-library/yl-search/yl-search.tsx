@@ -1,9 +1,5 @@
 "use client";
 
-import {
-  IClassName,
-  IStateInput,
-} from "@/components/yl-utils/yl-global-interfaces";
 import YLIcon from "../yl-icon";
 import YLInput from "../yl-input/yl-input";
 
@@ -15,9 +11,12 @@ import { IYLSearchProps } from "./types";
 
 export default function YLSearch<T>(props: IYLSearchProps<T>) {
   const filterMethod = (item: T) => {
-    if (props.value) {
+    if (props.value != undefined) {
       if (props.field) {
-        const result = String(item[props.field]).match(props.value);
+        console.log(props.value);
+        const result = String(item[props.field])
+          .toLowerCase()
+          .match(props.value);
         if (result) {
           return result.length > 0;
         } else {

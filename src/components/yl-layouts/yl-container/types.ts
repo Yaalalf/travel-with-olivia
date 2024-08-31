@@ -17,7 +17,9 @@ import {
   IMargin,
   IOverflow,
   IPadding,
+  IPosition,
   ITag,
+  ITagContainer,
   IYLMediaQuery,
   IZIndex,
 } from "@/components/yl-utils/yl-global-interfaces";
@@ -57,6 +59,11 @@ export type YLContainerStyle = `${YLContainerName}-${Extract<
   | `${EYLCSSProperties.borderInlineStart}`
   | `${EYLCSSProperties.borderInlineEnd}`
   | `${EYLCSSProperties.boxShadow}`
+  | `${EYLCSSProperties.position}`
+  | `${EYLCSSProperties.top}`
+  | `${EYLCSSProperties.left}`
+  | `${EYLCSSProperties.bottom}`
+  | `${EYLCSSProperties.right}`
   | `${EYLCSSProperties.backgroundColor}`
   | `${EYLCSSProperties.overflow}`
   | `${EYLCSSProperties.zIndex}`
@@ -69,7 +76,7 @@ export interface IYLContainerProps
   extends IYLContainerStyleProps,
     IClassName,
     Partial<IChildren>,
-    ITag,
+    ITagContainer,
     IEvent,
     IExtendedStyle {}
 
@@ -80,6 +87,7 @@ export interface IYLContainerStyleProps
     IBorderRadius,
     IBorder,
     IBoxShadow,
+    IPosition,
     IBackgroundColor,
     IOverflow,
     IZIndex,
