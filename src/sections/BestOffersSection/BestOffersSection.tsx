@@ -11,6 +11,7 @@ import YLTextHeader from "@/components/yl-layouts/yl-text-header/yl-text-header"
 import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETextTransform } from "@/components/yl-utils/yl-global-enums";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { Fragment } from "react";
 
 export default function BestOffersSection() {
   return (
@@ -47,33 +48,39 @@ export default function BestOffersSection() {
           gap="16px"
           marginBlockStart="40px"
         >
-          {[0, 0, 0, 0, 0, 0].map(() => (
-            <YLCard inlineSize="320px" blockSize="340px" backgroundColor="#eee">
-              <YLBackgroundImage position="relative" blockSize="80%" />
-              <YLFlexContainer
-                inlineSize="100%"
-                blockSize="20%"
-                paddingInline="12px"
-                justifyContent="space-between"
+          {[0, 0, 0, 0, 0, 0].map((item, index) => (
+            <Fragment key={index}>
+              <YLCard
+                inlineSize="320px"
+                blockSize="340px"
+                backgroundColor="#eee"
               >
-                <YLText
-                  tag={ETag.span}
-                  fontSize="16px"
-                  textTransform={ETextTransform.uppercase}
-                  fontFamily="Nunito"
-                  fontWeight="800"
-                  color="#333"
-                ></YLText>
-                <YLText
-                  tag={ETag.span}
-                  fontSize="16px"
-                  textTransform={ETextTransform.uppercase}
-                  fontFamily="Nunito"
-                  fontWeight="800"
-                  color="#333"
-                ></YLText>
-              </YLFlexContainer>
-            </YLCard>
+                <YLBackgroundImage position="relative" blockSize="80%" />
+                <YLFlexContainer
+                  inlineSize="100%"
+                  blockSize="20%"
+                  paddingInline="12px"
+                  justifyContent="space-between"
+                >
+                  <YLText
+                    tag={ETag.span}
+                    fontSize="16px"
+                    textTransform={ETextTransform.uppercase}
+                    fontFamily="Nunito"
+                    fontWeight="800"
+                    color="#333"
+                  ></YLText>
+                  <YLText
+                    tag={ETag.span}
+                    fontSize="16px"
+                    textTransform={ETextTransform.uppercase}
+                    fontFamily="Nunito"
+                    fontWeight="800"
+                    color="#333"
+                  ></YLText>
+                </YLFlexContainer>
+              </YLCard>
+            </Fragment>
           ))}
         </YLFlexContainer>
       </YLFlexContainer>
