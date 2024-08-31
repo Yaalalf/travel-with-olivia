@@ -12,6 +12,7 @@ import {
 import YLTextHeader from "@/components/yl-layouts/yl-text-header/yl-text-header";
 import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { Fragment } from "react";
 
 export default function WyChooseSection() {
   return (
@@ -50,39 +51,41 @@ export default function WyChooseSection() {
           ></YLTextHeader>
 
           <YLFlexContainer inlineSize="100%" gap="32px" marginBlockStart="32px">
-            {[0, 0, 0].map(() => (
-              <YLFlexContainer
-                flexDirection="column"
-                inlineSize="360px"
-                gap="20px"
-              >
+            {[0, 0, 0].map((item, index) => (
+              <Fragment key={index}>
                 <YLFlexContainer
-                  inlineSize="100px"
-                  blockSize="100px"
-                  borderRadius="100%"
-                  backgroundColor="white"
-                  boxShadow="0px 3px 6px #00000020"
-                  overflow="hidden"
+                  flexDirection="column"
+                  inlineSize="360px"
+                  gap="20px"
                 >
-                  <YLDecoratorImage
-                    position="relative"
-                    inlineSize="50%"
-                    blockSize="50%"
-                  ></YLDecoratorImage>
-                </YLFlexContainer>
+                  <YLFlexContainer
+                    inlineSize="100px"
+                    blockSize="100px"
+                    borderRadius="100%"
+                    backgroundColor="white"
+                    boxShadow="0px 3px 6px #00000020"
+                    overflow="hidden"
+                  >
+                    <YLDecoratorImage
+                      position="relative"
+                      inlineSize="50%"
+                      blockSize="50%"
+                    ></YLDecoratorImage>
+                  </YLFlexContainer>
 
-                <YLTextHeader
-                  tag={ETag.h3}
-                  fontSize="22px"
-                  textTransform={EYLTextHeaderTransform.uppercase}
-                  fontFamily="Nunito"
-                  fontWeight="800"
-                  color="white"
-                  textShadow="0px 3px 6px #00000050"
-                  textAlign={EYLTextHeaderTextAlign.center}
-                ></YLTextHeader>
-                <YLText tag={ETag.p} fontSize="16px" color="#eee"></YLText>
-              </YLFlexContainer>
+                  <YLTextHeader
+                    tag={ETag.h3}
+                    fontSize="22px"
+                    textTransform={EYLTextHeaderTransform.uppercase}
+                    fontFamily="Nunito"
+                    fontWeight="800"
+                    color="white"
+                    textShadow="0px 3px 6px #00000050"
+                    textAlign={EYLTextHeaderTextAlign.center}
+                  ></YLTextHeader>
+                  <YLText tag={ETag.p} fontSize="16px" color="#eee"></YLText>
+                </YLFlexContainer>
+              </Fragment>
             ))}
           </YLFlexContainer>
         </YLFlexContainer>

@@ -7,6 +7,7 @@ import { EYLTextHeaderTextAlign } from "@/components/yl-layouts/yl-text-header/t
 import YLTextHeader from "@/components/yl-layouts/yl-text-header/yl-text-header";
 import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { Fragment } from "react";
 
 export default function SearchSongs() {
   return (
@@ -62,35 +63,37 @@ export default function SearchSongs() {
         {data
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((song) => (
-            <YLFlexContainer
-              inlineSize="300px"
-              blockSize="80px"
-              borderRadius="12px"
-              backgroundColor="#fff"
-              flexDirection="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-              padding="12px"
-              boxShadow="0px 3px 3px #00000033"
-            >
-              <YLTextHeader
-                tag={ETag.h3}
-                fontSize="16px"
-                fontWeight="800"
-                fontFamily="Nunito"
+            <Fragment key={song.name}>
+              <YLFlexContainer
+                inlineSize="300px"
+                blockSize="80px"
+                borderRadius="12px"
+                backgroundColor="#fff"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="flex-start"
+                padding="12px"
+                boxShadow="0px 3px 3px #00000033"
               >
-                {song.name}
-              </YLTextHeader>
-              <YLText
-                tag={ETag.span}
-                fontSize="16px"
-                fontWeight="400"
-                fontFamily="Nunito"
-                color="#555"
-              >
-                {song.type}
-              </YLText>
-            </YLFlexContainer>
+                <YLTextHeader
+                  tag={ETag.h3}
+                  fontSize="16px"
+                  fontWeight="800"
+                  fontFamily="Nunito"
+                >
+                  {song.name}
+                </YLTextHeader>
+                <YLText
+                  tag={ETag.span}
+                  fontSize="16px"
+                  fontWeight="400"
+                  fontFamily="Nunito"
+                  color="#555"
+                >
+                  {song.type}
+                </YLText>
+              </YLFlexContainer>
+            </Fragment>
           ))}
       </YLFlexContainer>
     </section>
