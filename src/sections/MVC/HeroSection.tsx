@@ -149,6 +149,7 @@ export default function MVCHeroSection() {
               options={{ rotationX: 20 }}
               items={[
                 <YLDecoratorImage
+                  key={0}
                   position="absolute"
                   inlineSize="300px"
                   blockSize="300px"
@@ -156,6 +157,7 @@ export default function MVCHeroSection() {
                   backgroundImage={`url("${"/mvc/windows-2.png"}")`}
                 ></YLDecoratorImage>,
                 <YLDecoratorImage
+                  key={1}
                   position="absolute"
                   inlineSize="360px"
                   blockSize="360px"
@@ -163,6 +165,7 @@ export default function MVCHeroSection() {
                   backgroundImage={`url("${"/mvc/windows-1.png"}")`}
                 ></YLDecoratorImage>,
                 <YLDecoratorImage
+                  key={2}
                   position="absolute"
                   inlineSize="440px"
                   blockSize="440px"
