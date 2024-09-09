@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (360px <= width < 1024px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-masked-image{
+    --yl-masked-image-inline-size-360-1024 : var(--yl-masked-image-inline-size);--yl-masked-image-block-size-360-1024 : var(--yl-masked-image-block-size);--yl-masked-image-background-color-360-1024 : var(--yl-masked-image-background-color);--yl-masked-image-mask-image-360-1024 : var(--yl-masked-image-mask-image);--yl-masked-image-mask-position-360-1024 : var(--yl-masked-image-mask-position);--yl-masked-image-mask-size-360-1024 : var(--yl-masked-image-mask-size);--yl-masked-image-mask-repeat-360-1024 : var(--yl-masked-image-mask-repeat);--yl-masked-image-position-360-1024 : var(--yl-masked-image-position);--yl-masked-image-top-360-1024 : var(--yl-masked-image-top);--yl-masked-image-left-360-1024 : var(--yl-masked-image-left);--yl-masked-image-right-360-1024 : var(--yl-masked-image-right);--yl-masked-image-bottom-360-1024 : var(--yl-masked-image-bottom);--yl-masked-z-index-360-1024 : var(--yl-masked-z-index); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-masked-image{
+    inline-size: var(--yl-masked-image-inline-size-360-1024);block-size: var(--yl-masked-image-block-size-360-1024);background-color: var(--yl-masked-image-background-color-360-1024);mask-image: var(--yl-masked-image-mask-image-360-1024);mask-repeat: var(--yl-masked-image-mask-repeat-360-1024);mask-position: var(--yl-masked-image-mask-position-360-1024);mask-size: var(--yl-masked-image-mask-size-360-1024);position: var(--yl-masked-image-position-360-1024);top: var(--yl-masked-image-top-360-1024);left: var(--yl-masked-image-left-360-1024);right: var(--yl-masked-image-right-360-1024);bottom: var(--yl-masked-image-bottom-360-1024);z-index: var(--yl-masked-image-z-index-360-1024); 
+      } 
+    } 
+  }

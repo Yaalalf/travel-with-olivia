@@ -13,10 +13,9 @@ export default function YLSearch<T>(props: IYLSearchProps<T>) {
   const filterMethod = (item: T) => {
     if (props.value != undefined) {
       if (props.field) {
-        console.log(props.value);
         const result = String(item[props.field])
           .toLowerCase()
-          .match(props.value);
+          .match(props.value.toLowerCase());
         if (result) {
           return result.length > 0;
         } else {

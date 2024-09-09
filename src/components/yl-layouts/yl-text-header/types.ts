@@ -9,7 +9,9 @@ import {
   IMargin,
   IPadding,
   ITag,
+  IText,
   IYLMediaQuery,
+  TagTextHeader,
 } from "@/components/yl-utils/yl-global-interfaces";
 
 export const YL_TEXT_HEADER_NAME = "--yl-text-header";
@@ -50,23 +52,16 @@ export interface IYLTextHeaderStyle
 export interface IYLTextHeaderProps
   extends IYLTextHeaderStyleProps,
     IClassName,
-    Partial<IChildren>,
-    ITag {}
+    Partial<IChildren> {
+  tag?: TagTextHeader;
+}
 
 export interface IYLTextHeaderStyleProps
   extends Partial<IDimension>,
     IPadding,
     IMargin,
-    IYLMediaQuery<IYLTextHeaderStyleProps> {
-  color?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  fontFamily?: string;
-  lineHeight?: string;
-  textTransform?: EYLTextHeaderTransform;
-  textShadow?: string;
-  textAlign?: EYLTextHeaderTextAlign;
-}
+    IText,
+    IYLMediaQuery<IYLTextHeaderStyleProps> {}
 
 export enum EYLTextHeaderTransform {
   capitalize = "capitalize",

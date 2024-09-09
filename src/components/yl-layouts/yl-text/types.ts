@@ -11,7 +11,9 @@ import {
   IMargin,
   IPadding,
   ITag,
+  IText,
   IYLMediaQuery,
+  TagText,
 } from "@/components/yl-utils/yl-global-interfaces";
 
 export const YL_TEXT_NAME = "--yl-text";
@@ -51,20 +53,13 @@ export interface IYLTextStyle extends Partial<Record<YLTextStyle, string>> {}
 export interface IYLTextProps
   extends IYLTextStyleProps,
     IClassName,
-    Partial<IChildren>,
-    ITag {}
+    Partial<IChildren> {
+  tag?: TagText;
+}
 
 export interface IYLTextStyleProps
   extends Partial<IDimension>,
     IPadding,
     IMargin,
-    IYLMediaQuery<IYLTextStyleProps> {
-  color?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  fontFamily?: string;
-  lineHeight?: string;
-  textTransform?: ETextTransform;
-  textShadow?: string;
-  textAlign?: ETextAlign;
-}
+    IYLMediaQuery<IYLTextStyleProps>,
+    IText {}

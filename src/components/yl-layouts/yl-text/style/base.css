@@ -25,14 +25,14 @@
     --yl-text-margin-block-start: 0;
     --yl-text-margin-block-end: 0;
 
-    --yl-text-color: black;
-    --yl-text-font-size: auto;
-    --yl-text-line-height: auto;
-    --yl-text-font-weight: auto;
-    --yl-text-font-family: auto;
-    --yl-text-text-transform: none;
-    --yl-text-text-shadow: none;
-    --yl-text-text-align: left;
+    --yl-text-color: inherit;
+    --yl-text-font-size: inherit;
+    --yl-text-line-height: inherit;
+    --yl-text-font-weight: inherit;
+    --yl-text-font-family: inherit;
+    --yl-text-text-transform: inherit;
+    --yl-text-text-shadow: inherit;
+    --yl-text-text-align: inherit;
   }
   /**************************Styles********************************/
   /**********************************************************/

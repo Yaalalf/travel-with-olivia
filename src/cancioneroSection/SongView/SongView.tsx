@@ -48,7 +48,11 @@ export default function SongView({ song }: { song: ISong }) {
         </YLFlexContainer>
       </YLContainer>
 
-      <YLContainer paddingInlineStart="12px" paddingBlockStart="20px">
+      <YLContainer
+        paddingInlineStart="12px"
+        paddingBlockStart="20px"
+        paddingBlockEnd="40px"
+      >
         {song.structure?.map((item, index) => (
           <Fragment key={`${item}-${index}`}>
             <YLTextHeader marginBlockEnd="16px" marginBlockStart="12px">

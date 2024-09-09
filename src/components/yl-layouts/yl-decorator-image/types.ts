@@ -6,7 +6,9 @@ import {
   IBackgroundImage,
   IClassName,
   IDimension,
+  IFilter,
   IPosition,
+  ITransform,
   IYLMediaQuery,
   IZIndex,
 } from "@/components/yl-utils/yl-global-interfaces";
@@ -25,11 +27,13 @@ export type YLDecoratorImageStyle = `${YLDecoratorImageName}-${Extract<
   | `${EYLCSSProperties.backgroundPositionX}`
   | `${EYLCSSProperties.backgroundPositionY}`
   | `${EYLCSSProperties.backgroundSize}`
+  | `${EYLCSSProperties.filter}`
   | `${EYLCSSProperties.position}`
   | `${EYLCSSProperties.top}`
   | `${EYLCSSProperties.left}`
   | `${EYLCSSProperties.right}`
   | `${EYLCSSProperties.bottom}`
+  | `${EYLCSSProperties.transform}`
   | `${EYLCSSProperties.zIndex}`
 >}`;
 
@@ -45,4 +49,6 @@ export interface IYLDecoratorImageStyleProps
     IPosition,
     IBackgroundImage,
     IZIndex,
+    ITransform,
+    IFilter,
     IYLMediaQuery<IYLDecoratorImageStyleProps> {}

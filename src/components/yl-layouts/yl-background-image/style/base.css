@@ -10,20 +10,25 @@
     --yl-background-image-inline-size: 100%;
     --yl-background-image-block-size: 100%;
 
+    --yl-background-image-background-color: #e5ecf0;
+
     --yl-background-image-background-image: url("/yl-img/yl-image-placeholder-transparent.png");
     --yl-background-image-background-position: center;
     --yl-background-image-background-position-x: center;
     --yl-background-image-background-position-y: center;
     --yl-background-image-background-size: contain;
     --yl-background-image-background-repeat: no-repeat;
+    --yl-background-image-background-blend-mode: none;
 
     --yl-background-image-position: absolute;
-    --yl-background-image-top: auto;
-    --yl-background-image-left: auto;
+    --yl-background-image-top: 0px;
+    --yl-background-image-left: 0px;
     --yl-background-image-right: auto;
     --yl-background-image-bottom: auto;
 
-    --yl-background-z-index: auto;
+    --yl-background-image-transform: auto;
+
+    --yl-background-image-z-index: auto;
   }
 
   /**************************Styles********************************/
@@ -32,7 +37,7 @@
     inline-size: var(--yl-background-image-inline-size);
     block-size: var(--yl-background-image-block-size);
 
-    background-color: #e5ecf0;
+    background-color: var(--yl-background-image-background-color);
 
     background-image: var(--yl-background-image-background-image);
 
@@ -42,12 +47,15 @@
     background-position-y: var(--yl-background-image-background-position-y);
     background-size: var(--yl-background-image-background-size);
 
+    background-blend-mode: var(--yl-background-image-background-blend-mode);
+
     position: var(--yl-background-image-position);
     top: var(--yl-background-image-top);
     left: var(--yl-background-image-left);
     right: var(--yl-background-image-right);
     bottom: var(--yl-background-image-bottom);
+    transform: var(--yl-background-image-transform);
 
-    z-index: var(--yl-background-z-index);
+    z-index: var(--yl-background-image-z-index);
   }
 }

@@ -11,10 +11,11 @@
     --yl-background-color-block-size: 100%;
 
     --yl-background-color-background-color: white;
+    --yl-background-color-background-image: none;
 
     --yl-background-color-position: absolute;
-    --yl-background-color-top: auto;
-    --yl-background-color-left: auto;
+    --yl-background-color-top: 0px;
+    --yl-background-color-left: 0px;
     --yl-background-color-right: auto;
     --yl-background-color-bottom: auto;
 
@@ -29,6 +30,7 @@
     block-size: var(--yl-background-color-block-size);
 
     background-color: var(--yl-background-color-background-color);
+    background-image: var(--yl-background-color-background-image);
 
     position: var(--yl-background-color-position);
     top: var(--yl-background-color-top);

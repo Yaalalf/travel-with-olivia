@@ -1,5 +1,5 @@
-import { MouseEvent, ReactNode } from "react";
-import { EYLMediaQueryBreakPoints } from "./yl-global-enums";
+import { MouseEvent, ReactNode, TransitionEventHandler } from "react";
+import { ColorSwatch, EYLMediaQueryBreakPoints } from "./yl-global-enums";
 
 /*********************************LOGIC UTILITY INTERFACES********************/
 export interface IStateInput<T> {
@@ -27,6 +27,7 @@ export interface IKey {
 /*******************************IEvent*****************************************/
 export interface IEvent {
   onClick?: (event: MouseEvent) => void;
+  onTransitionEnd?: TransitionEventHandler;
 }
 
 /*******************************ClassName*****************************************/
@@ -35,7 +36,7 @@ export interface ITagContainer {
 }
 export type TagTextHeader = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type TagText = "p" | "span";
-export type TagContainer = "div" | "section" | "article";
+export type TagContainer = "div" | "section" | "article" | "ul" | "button";
 
 export interface ITag {
   tag?: ETag;
@@ -54,35 +55,53 @@ export enum ETag {
   div = "div",
   section = "section",
   article = "article",
+  button = "button",
+  ul = "ul",
 }
 
 /*******************************Dimension*****************************************/
 export interface IDimension {
   inlineSize: string;
+  minInlineSize: string;
+  maxInlineSize: string;
+
   blockSize: string;
+  minBlockSize: string;
+  maxBlockSize: string;
 }
 
 /*******************************Position*****************************************/
 export interface IPosition {
-  position?: string;
+  position?: PositionValues;
   top?: string;
   left?: string;
   right?: string;
   bottom?: string;
 }
 
+export type PositionValues =
+  | "static"
+  | "relative"
+  | "absolute"
+  | "fixed"
+  | "sticky";
+
 /*******************************Background*****************************************/
 export interface IBackgroundColor {
-  backgroundColor?: string;
+  backgroundColor?: ColorSwatch | string;
 }
+
 export interface IBackgroundImage {
   backgroundImage?: string;
   backgroundRepeat?: EBackgroundRepeat;
   backgroundPosition?: string;
   backgroundPositionX?: string;
   backgroundPositionY?: string;
-  backgroundSize?: string;
+  backgroundSize?: BackgroundSizeValues;
+  backgroundBlendMode?: string;
 }
+
+export type BackgroundSizeValues = "cover" | "contain" | string;
 
 export enum EBackgroundRepeat {
   repeat = "repeat",
@@ -93,11 +112,24 @@ export enum EBackgroundRepeat {
   noRepeat = "no-repeat",
 }
 
-/*******************************Background*****************************************/
+/*******************************Mask*****************************************/
+
+export interface IMaskImage {
+  maskImage?: string;
+  maskRepeat?: EBackgroundRepeat;
+  maskPosition?: string;
+
+  maskSize?: string;
+}
+
+/*******************************BoxShadow*****************************************/
 export interface IBoxShadow {
   boxShadow?: string;
 }
-
+/*******************************Filter*****************************************/
+export interface IFilter {
+  filter?: string;
+}
 /*******************************Padding*****************************************/
 export interface IPadding {
   padding?: string;
@@ -119,17 +151,49 @@ export interface IMargin {
   marginInlineStart?: string;
   marginInlineEnd?: string;
 }
-
+/*******************************Display*****************************************/
+export interface IDisplay {
+  display?: DisplayValues;
+}
+export type DisplayValues =
+  | "block"
+  | "inline"
+  | "inline-block"
+  | "flex"
+  | "inline-flex"
+  | "grid"
+  | "inline-grid"
+  | "flow-root";
 /*******************************Flex*****************************************/
 export interface IFlex {
-  flexDirection?: string;
+  flexDirection?: FlexDirectionValues;
 
-  alignItems?: string;
-  justifyContent?: string;
+  alignItems?: AlignItemsValues;
+  justifyContent?: JustifyContentValues;
 
   gap?: string;
 
-  flexWrap?: string;
+  flexWrap?: FlexWrapValues;
+}
+
+export type FlexDirectionValues =
+  | "column"
+  | "column-reverse"
+  | "row"
+  | "row-reverse";
+
+export type AlignItemsValues = "center" | "flex-end" | "flex-start";
+export type JustifyContentValues =
+  | "center"
+  | "flex-end"
+  | "flex-start"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+export type FlexWrapValues = "nowrap" | "wrap" | "wrap-reverse";
+
+export interface IFlexChild {
+  order?: string;
 }
 
 /*******************************BorderRadius*****************************************/
@@ -141,7 +205,7 @@ export interface IBorderRadius {
   borderEndEndRadius?: string;
 }
 
-/*******************************IBorder*****************************************/
+/*******************************Border*****************************************/
 export interface IBorder {
   border?: string;
 
@@ -153,16 +217,99 @@ export interface IBorder {
   borderInlineStart?: string;
   borderInlineEnd?: string;
 }
+/*******************************Text*****************************************/
+export interface IText {
+  color?: ColorSwatch | string;
+  fontSize?: string;
+  fontWeight?: string;
+  fontFamily?: string;
+  lineHeight?: string;
+  textTransform?: TextTransform;
+  textShadow?: string;
+  textAlign?: TextAlign;
+}
+
+export type TextTransform = "capitalize" | "lowercase" | "uppercase" | "none";
+export type TextAlign = "center" | "left" | "right";
+
+/*******************************Transform*****************************************/
+export interface ITransform {
+  transformOrigin?: string;
+  transform?: string;
+  translate?: string;
+  rotate?: string;
+  scale?: string;
+}
+/*******************************Transform*****************************************/
+export interface ITransformStyle {
+  transformStyle?: TransformStyle;
+}
+export type TransformStyle = "flat" | "preserve-3d" | "initial";
+
+/*******************************Transition*****************************************/
+export interface ITransition {
+  transition?: string;
+  transitionProperty?: string;
+}
 
 /*******************************Overflow*****************************************/
 export interface IOverflow {
-  overflow?: string;
+  overflow?: Overflow;
 }
 
+export type Overflow = "auto" | "visible" | "hidden" | "clip" | "scroll";
+
+/*******************************User Select*****************************************/
+export interface IUserSelect {
+  userSelect?: string;
+}
+
+/*******************************Opacity*****************************************/
+export interface IOpacity {
+  opacity?: string;
+}
 /*******************************zIndex*****************************************/
 export interface IZIndex {
   zIndex?: string;
 }
+/*******************************Cursor*****************************************/
+export interface ICursor {
+  cursor?: string;
+}
+/*******************************List*****************************************/
+export interface IList {
+  listStyle?: string;
+}
+
+/*******************************data-*****************************************/
+export interface IDataSet {
+  dataParentHover?: boolean;
+}
+
+/*******************************StateStyles*****************************************/
+export interface IStateStyles<ComponentStyle> {
+  hoverStyle?: ComponentStyle;
+  parentHoverStyle?: ComponentStyle;
+}
+/*******************************HoverState*****************************************/
+
+export type YLHoverStylePropNames<YLStyles extends string> =
+  `${YLStyles}-hover`;
+
+export type IYLHoverState<YLStyles extends string> = Record<
+  YLHoverStylePropNames<YLStyles>,
+  string
+>;
+
+/*******************************ParentHoverState*****************************************/
+
+export type YLParentHoverStylePropNames<YLStyles extends string> =
+  `${YLStyles}-parent-hover`;
+
+export type IYLParentHoverState<YLStyles extends string> = Record<
+  YLHoverStylePropNames<YLStyles>,
+  string
+>;
 
 /*******************************MediaQueryEndpoints*****************************************/
 export interface IYLMediaQuery<IYLComponentStyleProps> {
@@ -222,8 +369,27 @@ export interface IYLMediaQueryBreakPoints<RecordKeys extends string> {
 export type YLComponentMediaQueryStyle<YLStyles extends string> = Partial<
   Record<`${YLStyles}` | `${YLStyles}-${YLMediaQueryBreakPoints}`, string>
 >;
+/*******************************StyleStateDelivery*****************************************/
+export type StyleState<States extends string> = "default" | States;
+
+export interface IStyleStateDelivery<
+  State extends string,
+  YLComponentStyleProps
+> {
+  states: StyleState<State>[];
+  delivery: (state: StyleState<State>) => YLComponentStyleProps;
+}
 
 /*******************************ExtendsMechanics*****************************************/
 export interface IExtendedStyle {
   extendedStyles?: Partial<Record<string, string>>;
+}
+
+/*******************************SVG*****************************************/
+
+export type SVGStyleProps = "fill" | "height" | "width" | "strokeWidth";
+
+export interface ISVGStyleProps {
+  fill?: string | ColorSwatch;
+  size?: string;
 }

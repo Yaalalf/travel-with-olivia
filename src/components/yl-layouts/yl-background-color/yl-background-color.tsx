@@ -13,6 +13,7 @@ export function YLBackgroundColor({
   inlineSize,
 
   backgroundColor,
+  backgroundImage,
 
   bottom,
   left,
@@ -34,6 +35,7 @@ export function YLBackgroundColor({
       inlineSize,
       blockSize,
       backgroundColor,
+      backgroundImage,
       bottom,
       left,
       opacity,

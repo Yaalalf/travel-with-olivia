@@ -3,24 +3,36 @@ import {
   YLCSSProperties,
 } from "@/components/yl-utils/yl-global-enums";
 import {
+  DisplayValues,
   IBackgroundColor,
   IBorder,
   IBorderRadius,
   IBoxShadow,
   IChildren,
   IClassName,
+  ICursor,
   IDimension,
+  IDisplay,
   IEvent,
+  IExtendedStyle,
   IFlex,
-  IKey,
   IMargin,
   IOverflow,
   IPadding,
   IPosition,
+  ITag,
+  ITransform,
+  ITransition,
   IYLMediaQuery,
   IZIndex,
+  TagContainer,
 } from "@/components/yl-utils/yl-global-interfaces";
-import { IYLContainerStyle } from "../yl-container/types";
+import {
+  IYLContainerHTMLProps,
+  IYLContainerProps,
+  IYLContainerStyle,
+  IYLContainerStyleBaseProps,
+} from "../yl-container/types";
 
 export const YL_FLEX_CONTAINER_NAME = "--yl-flex-container";
 
@@ -41,20 +53,14 @@ export interface IYLFlexContainerStyle
 
 export interface IYLFlexContainerProps
   extends IYLFlexContainerStyleProps,
-    IClassName,
-    IEvent,
-    Partial<IChildren> {}
+    IYLContainerHTMLProps {}
 
 export interface IYLFlexContainerStyleProps
-  extends Partial<IDimension>,
-    IPadding,
-    IMargin,
-    IBorderRadius,
-    IBorder,
-    IBoxShadow,
-    IBackgroundColor,
-    IPosition,
-    IFlex,
-    IOverflow,
-    IZIndex,
-    IYLMediaQuery<IYLFlexContainerStyleProps> {}
+  extends Omit<IYLFlexContainerStyleBaseProps, "display">,
+    IYLMediaQuery<IYLFlexContainerStyleProps> {
+  display?: "flex" | "inline-flex";
+}
+
+export interface IYLFlexContainerStyleBaseProps
+  extends IYLContainerStyleBaseProps,
+    IFlex {}

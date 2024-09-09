@@ -1,0 +1,14 @@
+@layer yl-layout{
+   
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-background-color{
+    --yl-background-color-inline-size-hover : var(--yl-background-color-inline-size);--yl-background-color-block-size-hover : var(--yl-background-color-block-size);--yl-background-color-background-color-hover : var(--yl-background-color-background-color);--yl-background-color-background-image-hover : var(--yl-background-color-background-image);--yl-background-color-position-hover : var(--yl-background-color-position);--yl-background-color-top-hover : var(--yl-background-color-top);--yl-background-color-left-hover : var(--yl-background-color-left);--yl-background-color-right-hover : var(--yl-background-color-right);--yl-background-color-bottom-hover : var(--yl-background-color-bottom);--yl-background-color-opacity-hover : var(--yl-background-color-opacity);--yl-background-z-index-hover : var(--yl-background-z-index); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-background-color:hover{
+    inline-size: var(--yl-background-color-inline-size-hover);block-size: var(--yl-background-color-block-size-hover);background-color: var(--yl-background-color-background-color-hover);background-image: var(--yl-background-color-background-image-hover);position: var(--yl-background-color-position-hover);top: var(--yl-background-color-top-hover);left: var(--yl-background-color-left-hover);right: var(--yl-background-color-right-hover);bottom: var(--yl-background-color-bottom-hover);opacity: var(--yl-background-color-opacity-hover);z-index: var(--yl-background-color-z-index-hover); 
+      } 
+    } 
+  

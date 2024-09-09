@@ -16,8 +16,6 @@
   /**********************************************************/
 
   .yl-flex-container {
-    display: flex;
-
     flex-direction: var(--yl-flex-container-flex-direction);
     align-items: var(--yl-flex-container-align-items);
     justify-content: var(--yl-flex-container-justify-content);

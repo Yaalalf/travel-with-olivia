@@ -20,12 +20,15 @@ export function YLDecoratorImage({
   backgroundRepeat,
   backgroundSize,
 
+  filter,
+
   position,
   bottom,
   left,
   right,
   top,
 
+  transform,
   zIndex,
 
   mediaQuery = {},
@@ -49,7 +52,9 @@ export function YLDecoratorImage({
       right,
       top,
       backgroundImage,
+      transform,
       zIndex,
+      filter,
     },
     mediaQuery: mediaQuery,
     initProps: (props) => {

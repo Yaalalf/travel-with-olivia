@@ -4,6 +4,7 @@ import {
 } from "@/components/yl-utils/yl-global-enums";
 import {
   IBackgroundColor,
+  IBackgroundImage,
   IClassName,
   IDimension,
   IPosition,
@@ -20,6 +21,7 @@ export type YLBackgroundColorStyle = `${YLBackgroundColorName}-${Extract<
   | `${EYLCSSProperties.inlineSize}`
   | `${EYLCSSProperties.blockSize}`
   | `${EYLCSSProperties.backgroundColor}`
+  | `${EYLCSSProperties.backgroundImage}`
   | `${EYLCSSProperties.position}`
   | `${EYLCSSProperties.top}`
   | `${EYLCSSProperties.left}`
@@ -40,6 +42,7 @@ export interface IYLBackgroundColorStyleProps
   extends Partial<IDimension>,
     IPosition,
     IBackgroundColor,
+    IBackgroundImage,
     IZIndex,
     IYLMediaQuery<IYLBackgroundColorStyleProps> {
   opacity?: string;

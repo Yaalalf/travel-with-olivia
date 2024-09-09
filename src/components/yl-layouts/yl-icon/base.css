@@ -1,0 +1,39 @@
+/***************************yl-icon********************************/
+
+@layer yl-ui {
+  /**********************Vars****************************/
+  .yl-icon {
+    --yl-icon-inline-size: auto;
+    --yl-icon-block-size: auto;
+
+    --yl-icon-padding: auto;
+
+    --yl-icon-background-color: auto;
+
+    --yl-icon-color: auto;
+  }
+  /**************************Styles********************************/
+  /**********************************************************/
+
+  .yl-icon {
+    inline-size: var(--yl-icon-inline-size);
+    block-size: var(--yl-icon-block-size);
+
+    padding: var(--yl-icon-padding);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--yl-icon-color);
+  }
+  .yl-icon .yl-icon-container {
+    inline-size: 100%;
+    block-size: 100%;
+
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}

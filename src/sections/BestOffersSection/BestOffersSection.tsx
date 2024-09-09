@@ -2,7 +2,7 @@ import { YLBackgroundColor } from "@/components/yl-layouts/yl-background-color/y
 import { YLBackgroundImage } from "@/components/yl-layouts/yl-background-image/yl-background-image";
 import YLCard from "@/components/yl-layouts/yl-card/yl-card";
 import YLContainer from "@/components/yl-layouts/yl-container/yl-container";
-import YLFlexContainer from "@/components/yl-old-files-for-test/yl-flex-container-old/yl-flex-container";
+import YLFlexContainer from "@/components/yl-layouts/yl-flex-container/yl-flex-container";
 import {
   EYLTextHeaderTextAlign,
   EYLTextHeaderTransform,
@@ -10,7 +10,8 @@ import {
 import YLTextHeader from "@/components/yl-layouts/yl-text-header/yl-text-header";
 import YLText from "@/components/yl-layouts/yl-text/yl-text";
 import { ETextTransform } from "@/components/yl-utils/yl-global-enums";
-import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { ETag, IText } from "@/components/yl-utils/yl-global-interfaces";
+import YLTitleHeaderDoubleText from "@/components/yl-web-landing-page/yl-title-headers/yl-title-header-double-text/yl-title-header-double-text";
 import { Fragment } from "react";
 
 export default function BestOffersSection() {
@@ -23,24 +24,22 @@ export default function BestOffersSection() {
         justifyContent="flex-start"
         gap="4px"
       >
-        <YLTextHeader
-          tag={ETag.h2}
-          fontSize="28px"
-          textTransform={EYLTextHeaderTransform.uppercase}
-          fontFamily="Nunito"
-          fontWeight="900"
-          color="#222222"
-          textAlign={EYLTextHeaderTextAlign.center}
-        ></YLTextHeader>
-        <YLTextHeader
-          tag={ETag.h3}
-          fontSize="24px"
-          textTransform={EYLTextHeaderTransform.uppercase}
-          fontFamily="Nunito"
-          fontWeight="800"
-          color="#333"
-          textAlign={EYLTextHeaderTextAlign.center}
-        ></YLTextHeader>
+        <YLTitleHeaderDoubleText
+          primaryText="Best  Offers"
+          secondaryText="Check Out our top-rated tours"
+          primaryTitleStyle={{ ...textHeaderStyle, tag: ETag.h2, order: "1" }}
+          secondaryTitleStyle={{
+            ...textHeaderStyle,
+            tag: ETag.h3,
+            order: "1",
+            fontSize: "18px",
+            lineHeight: "26px",
+
+            fontWeight: "800",
+            color: "#333",
+          }}
+          containerStyle={{ gap: "0px" }}
+        />
 
         <YLFlexContainer
           inlineSize="1000px"
@@ -87,3 +86,12 @@ export default function BestOffersSection() {
     </YLContainer>
   );
 }
+export const textHeaderStyle: IText = {
+  fontSize: "34px",
+  textTransform: "uppercase",
+  fontFamily: "Nunito",
+  fontWeight: "900",
+  textAlign: "center",
+  lineHeight: "36px",
+  color: "#222222",
+};

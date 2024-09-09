@@ -23,7 +23,10 @@
     --yl-decorator-image-right: auto;
     --yl-decorator-image-bottom: auto;
 
-    --yl-decorator-z-index: auto;
+    --yl-decorator-image-filter: none;
+    --yl-decorator-image-transform: none;
+
+    --yl-decorator-image-z-index: auto;
   }
 
   /**************************Styles********************************/
@@ -46,6 +49,8 @@
     right: var(--yl-decorator-image-right);
     bottom: var(--yl-decorator-image-bottom);
 
-    z-index: var(--yl-decorator-z-index);
+    filter: var(--yl-decorator-image-filter);
+    transform: var(--yl-decorator-image-transform);
+    z-index: var(--yl-decorator-image-z-index);
   }
 }

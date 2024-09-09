@@ -1,0 +1,50 @@
+/***************************yl-masked-image********************************/
+/**********************************************************/
+/**********************************************************/
+
+@layer yl-layout {
+  /**********************Vars****************************/
+  /**********************************************************/
+
+  .yl-masked-image {
+    --yl-masked-image-inline-size: 100%;
+    --yl-masked-image-block-size: 100%;
+
+    --yl-masked-image-background-color: black;
+
+    --yl-masked-image-mask-image: url("/yl-img/yl-image-placeholder-transparent.png");
+    --yl-masked-image-mask-position: center;
+    --yl-masked-image-mask-size: contain;
+    --yl-masked-image-mask-repeat: no-repeat;
+
+    --yl-masked-image-position: absolute;
+    --yl-masked-image-top: auto;
+    --yl-masked-image-left: auto;
+    --yl-masked-image-right: auto;
+    --yl-masked-image-bottom: auto;
+
+    --yl-masked-z-index: auto;
+  }
+
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-masked-image {
+    inline-size: var(--yl-masked-image-inline-size);
+    block-size: var(--yl-masked-image-block-size);
+
+    background-color: var(--yl-masked-image-background-color);
+
+    mask-image: var(--yl-masked-image-background-image);
+    mask-repeat: var(--yl-masked-image-background-repeat);
+    mask-position: var(--yl-masked-image-background-position);
+    mask-size: var(--yl-masked-image-background-size);
+
+    position: var(--yl-masked-image-position);
+    top: var(--yl-masked-image-top);
+    left: var(--yl-masked-image-left);
+    right: var(--yl-masked-image-right);
+    bottom: var(--yl-masked-image-bottom);
+
+    z-index: var(--yl-masked-z-index);
+  }
+}

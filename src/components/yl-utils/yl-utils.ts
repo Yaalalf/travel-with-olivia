@@ -11,6 +11,10 @@ import {
   YLMediaQueryBreakPoints,
   IBorderRadius,
   IBorder,
+  IYLMediaQuery,
+  IYLHoverState,
+  YLHoverStylePropNames,
+  ITransition,
 } from "./yl-global-interfaces";
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -68,6 +72,35 @@ export function createStyleObject<
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
+export function createStateStyleObject<
+  YLComponentStyle extends string,
+  YLStateStyle extends string,
+  IYLComponentProps extends {}
+>(
+  objectStyleName: EYLComponentsNames,
+  stateStyleName: YLStateStyle,
+  initValueObject: Partial<IYLComponentProps>
+) {
+  const hoverObjects: Partial<IYLHoverState<YLComponentStyle>> = {};
+
+  Object.entries(initValueObject).forEach((entry) => {
+    const kebabCase = mapCamelCaseToKebabCase(entry[0]);
+
+    const styleObjectKey = "--" + objectStyleName + "-" + kebabCase;
+
+    const keyString = `${styleObjectKey}-${stateStyleName}`;
+
+    hoverObjects[keyString as YLHoverStylePropNames<YLComponentStyle>] =
+      entry[1] as string;
+  });
+
+  return hoverObjects;
+}
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
 export function createMediaQueryStyleObject<
   YLComponentStyle extends string,
   IYLComponentProps extends {}
@@ -97,85 +130,74 @@ export function createMediaQueryStyleObject<
   return mediaQueryObjects;
 }
 
-export function createMediaQueryObjects<
-  RecordKeys extends string,
-  Type extends { [index: string]: string | undefined },
-  InitialValueType extends Object
+export function splitMediaQueryObject<
+  IYLComponentStyleProps,
+  YLPropertyNames extends keyof IYLComponentStyleProps
 >(
-  styleObject: Type,
-  initValueObject: Partial<Record<YLMediaQueryBreakPoints, InitialValueType>>
-) {
-  const mediaQueryObjects: Partial<IYLMediaQueryBreakPoints<RecordKeys>> = {};
+  mediaQueryObject: Partial<
+    Record<YLMediaQueryBreakPoints, Partial<IYLComponentStyleProps>>
+  >,
+  properties: YLPropertyNames[]
+): [
+  Partial<
+    Record<
+      YLMediaQueryBreakPoints,
+      Partial<Pick<IYLComponentStyleProps, YLPropertyNames>>
+    >
+  >,
+  Partial<
+    Record<
+      YLMediaQueryBreakPoints,
+      Partial<Omit<IYLComponentStyleProps, YLPropertyNames>>
+    >
+  >
+] {
+  const propsMediaQueryObjects: Partial<
+    Record<
+      YLMediaQueryBreakPoints,
+      Partial<Pick<IYLComponentStyleProps, YLPropertyNames>>
+    >
+  > = {};
+  const restMediaQueryObjects: Partial<
+    Record<
+      YLMediaQueryBreakPoints,
+      Partial<Omit<IYLComponentStyleProps, YLPropertyNames>>
+    >
+  > = {};
 
-  Object.entries(initValueObject).forEach((entry) => {
-    mediaQueryObjects[entry[0]] = {};
+  Object.entries(mediaQueryObject).forEach((entry) => {
+    propsMediaQueryObjects[entry[0] as YLMediaQueryBreakPoints] = {};
+    restMediaQueryObjects[entry[0] as YLMediaQueryBreakPoints] = {};
 
     Object.entries(entry[1]).forEach((subEntry) => {
-      const kebabCase = mapCamelCaseToKebabCase(subEntry[0]);
-
-      const styleObjectKey = Object.keys(styleObject).filter((key) => {
-        let result = key.match(kebabCase);
-        if (result) return result.length > 0;
-        return false;
-      })[0];
-
-      const keyString = `${styleObjectKey}-${entry[0]}`;
-
-      mediaQueryObjects[entry[0]][keyString] = subEntry[1];
+      if (properties.includes(subEntry[0] as YLPropertyNames)) {
+        const tempObj =
+          propsMediaQueryObjects[entry[0] as YLMediaQueryBreakPoints];
+        if (tempObj) {
+          tempObj[subEntry[0] as YLPropertyNames] = subEntry[1] as
+            | IYLComponentStyleProps[YLPropertyNames]
+            | undefined;
+        }
+      } else {
+        const tempObj =
+          restMediaQueryObjects[entry[0] as YLMediaQueryBreakPoints];
+        if (tempObj) {
+          tempObj[
+            subEntry[0] as keyof Omit<IYLComponentStyleProps, YLPropertyNames>
+          ] = subEntry[1] as
+            | IYLComponentStyleProps[Exclude<
+                keyof IYLComponentStyleProps,
+                YLPropertyNames
+              >]
+            | undefined;
+        }
+      }
     });
   });
 
-  return mediaQueryObjects;
+  return [propsMediaQueryObjects, restMediaQueryObjects];
 }
 
-export function createMediaQueryFullObjects<
-  RecordKeys extends string,
-  Type extends { [index: string]: string | undefined }
->(styleObject: Type) {
-  const mediaQueryObjects: IYLMediaQueryBreakPoints<RecordKeys> = {
-    [EYLMediaQueryBreakPoints.mobileFull]: {},
-    [EYLMediaQueryBreakPoints.mobile360]: {},
-    [EYLMediaQueryBreakPoints.mobile480]: {},
-    [EYLMediaQueryBreakPoints.mobile600]: {},
-    [EYLMediaQueryBreakPoints.mobile900]: {},
-    [EYLMediaQueryBreakPoints.desktopFull]: {},
-    [EYLMediaQueryBreakPoints.desktop1024]: {},
-    [EYLMediaQueryBreakPoints.desktop1280]: {},
-    [EYLMediaQueryBreakPoints.desktop1440]: {},
-    [EYLMediaQueryBreakPoints.desktop1600]: {},
-  };
-
-  Object.entries(styleObject).forEach((entry) => {
-    Object.keys(mediaQueryObjects).forEach((key) => {
-      const keyString = `${entry[0]}-${key}`;
-      mediaQueryObjects[key][keyString] = entry[1];
-    });
-  });
-
-  return mediaQueryObjects;
-}
-
-export function populateMediaQueryObject<
-  RecordKeys extends string,
-  Type extends Object
->(
-  mediaQueryObject: IYLMediaQueryBreakPoints<RecordKeys>,
-  initValueObject: Partial<Record<YLMediaQueryBreakPoints, Type>>
-) {
-  Object.entries(initValueObject).forEach((entry) => {
-    Object.entries(entry[1]).forEach((subEntry) => {
-      const kebabCase = mapCamelCaseToKebabCase(subEntry[0]);
-
-      const key = Object.keys(mediaQueryObject[entry[0]]).filter((key) => {
-        let result = key.match(kebabCase);
-        if (result) return result.length > 0;
-        return false;
-      });
-
-      mediaQueryObject[entry[0]][key[0]] = subEntry[1];
-    });
-  });
-}
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -428,6 +450,20 @@ export function initBorderValues(props: IBorder) {
 
     if (!props.borderInlineEnd) {
       props.borderInlineEnd = props.borderInline;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+export function initTransitionValues(props: ITransition) {
+  if (props.transitionProperty) {
+  } else {
+    if (props.transition) {
+      const properties = props.transition.split(" ");
+
+      props.transitionProperty = properties[0];
     }
   }
 }

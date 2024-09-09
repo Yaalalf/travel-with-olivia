@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (600px <= width < 900px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-masked-image{
+    --yl-masked-image-inline-size-600-900 : var(--yl-masked-image-inline-size-360-1024);--yl-masked-image-block-size-600-900 : var(--yl-masked-image-block-size-360-1024);--yl-masked-image-background-color-600-900 : var(--yl-masked-image-background-color-360-1024);--yl-masked-image-mask-image-600-900 : var(--yl-masked-image-mask-image-360-1024);--yl-masked-image-mask-position-600-900 : var(--yl-masked-image-mask-position-360-1024);--yl-masked-image-mask-size-600-900 : var(--yl-masked-image-mask-size-360-1024);--yl-masked-image-mask-repeat-600-900 : var(--yl-masked-image-mask-repeat-360-1024);--yl-masked-image-position-600-900 : var(--yl-masked-image-position-360-1024);--yl-masked-image-top-600-900 : var(--yl-masked-image-top-360-1024);--yl-masked-image-left-600-900 : var(--yl-masked-image-left-360-1024);--yl-masked-image-right-600-900 : var(--yl-masked-image-right-360-1024);--yl-masked-image-bottom-600-900 : var(--yl-masked-image-bottom-360-1024);--yl-masked-z-index-600-900 : var(--yl-masked-z-index-360-1024); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-masked-image{
+    inline-size: var(--yl-masked-image-inline-size-600-900);block-size: var(--yl-masked-image-block-size-600-900);background-color: var(--yl-masked-image-background-color-600-900);mask-image: var(--yl-masked-image-mask-image-600-900);mask-repeat: var(--yl-masked-image-mask-repeat-600-900);mask-position: var(--yl-masked-image-mask-position-600-900);mask-size: var(--yl-masked-image-mask-size-600-900);position: var(--yl-masked-image-position-600-900);top: var(--yl-masked-image-top-600-900);left: var(--yl-masked-image-left-600-900);right: var(--yl-masked-image-right-600-900);bottom: var(--yl-masked-image-bottom-600-900);z-index: var(--yl-masked-image-z-index-600-900); 
+      } 
+    } 
+  }

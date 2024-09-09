@@ -1,0 +1,14 @@
+@layer yl-layout{
+   
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-background-image{
+    --yl-background-image-inline-size-hover : var(--yl-background-image-inline-size);--yl-background-image-block-size-hover : var(--yl-background-image-block-size);--yl-background-image-background-color-hover : var(--yl-background-image-background-color);--yl-background-image-background-image-hover : var(--yl-background-image-background-image);--yl-background-image-background-position-hover : var(--yl-background-image-background-position);--yl-background-image-background-position-x-hover : var(--yl-background-image-background-position-x);--yl-background-image-background-position-y-hover : var(--yl-background-image-background-position-y);--yl-background-image-background-size-hover : var(--yl-background-image-background-size);--yl-background-image-background-repeat-hover : var(--yl-background-image-background-repeat);--yl-background-image-background-blend-mode-hover : var(--yl-background-image-background-blend-mode);--yl-background-image-position-hover : var(--yl-background-image-position);--yl-background-image-top-hover : var(--yl-background-image-top);--yl-background-image-left-hover : var(--yl-background-image-left);--yl-background-image-right-hover : var(--yl-background-image-right);--yl-background-image-bottom-hover : var(--yl-background-image-bottom);--yl-background-image-transform-hover : var(--yl-background-image-transform);--yl-background-image-z-index-hover : var(--yl-background-image-z-index); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-background-image:hover{
+    inline-size: var(--yl-background-image-inline-size-hover);block-size: var(--yl-background-image-block-size-hover);background-color: var(--yl-background-image-background-color-hover);background-image: var(--yl-background-image-background-image-hover);background-repeat: var(--yl-background-image-background-repeat-hover);background-position: var(--yl-background-image-background-position-hover);background-position-x: var(--yl-background-image-background-position-x-hover);background-position-y: var(--yl-background-image-background-position-y-hover);background-size: var(--yl-background-image-background-size-hover);background-blend-mode: var(--yl-background-image-background-blend-mode-hover);position: var(--yl-background-image-position-hover);top: var(--yl-background-image-top-hover);left: var(--yl-background-image-left-hover);right: var(--yl-background-image-right-hover);bottom: var(--yl-background-image-bottom-hover);transform: var(--yl-background-image-transform-hover);z-index: var(--yl-background-image-z-index-hover); 
+      } 
+    } 
+  

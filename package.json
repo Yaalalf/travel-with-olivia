@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cssForComponent": "node ./src/components/yl-scripts/yl-create-css-media-query-for-components.mjs"
+    "cssForComponent": "node ./src/components/yl-scripts/yl-create-css-for-components.mjs"
   },
   "dependencies": {
     "react": "^18",

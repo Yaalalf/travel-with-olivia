@@ -6,8 +6,13 @@
   /**********************Vars****************************/
   /**********************************************************/
   .yl-container {
-    --yl-container-inline-size: 100%;
-    --yl-container-block-size: 100%;
+    --yl-container-inline-size: auto;
+    --yl-container-min-inline-size: auto;
+    --yl-container-max-inline-size: auto;
+
+    --yl-container-block-size: auto;
+    --yl-container-min-block-size: auto;
+    --yl-container-max-block-size: auto;
 
     --yl-container-padding: 0;
     --yl-container-padding-inline: 0;
@@ -24,6 +29,7 @@
     --yl-container-margin-block: 0;
     --yl-container-margin-block-start: 0;
     --yl-container-margin-block-end: 0;
+    --yl-container-display: block;
 
     --yl-container-background-color: transparent;
 
@@ -48,8 +54,26 @@
     --yl-container-bottom: none;
 
     --yl-container-box-shadow: none;
-    --yl-container-overflow: visible;
 
+    --yl-container-transform-style: initial;
+    --yl-container-transform: none;
+    --yl-container-translate: none;
+    --yl-container-scale: none;
+    --yl-container-rotate: none;
+
+    --yl-container-filter: none;
+
+    --yl-container-transition: none;
+
+    --yl-container-transition-property: none;
+
+    --yl-container-cursor: default;
+
+    --yl-container-opacity: 1;
+
+    --yl-container-transform-origin: none;
+
+    --yl-container-overflow: visible;
     --yl-container-z-index: 1;
   }
   /**************************Styles********************************/
@@ -57,7 +81,12 @@
 
   .yl-container {
     inline-size: var(--yl-container-inline-size);
+    min-inline-size: var(--yl-container-min-inline-size);
+    max-inline-size: var(--yl-container-max-inline-size);
+
     block-size: var(--yl-container-block-size);
+    min-block-size: var(--yl-container-min-block-size);
+    max-block-size: var(--yl-container-max-block-size);
 
     padding: var(--yl-container-padding);
     padding-inline: var(--yl-container-padding-inline);
@@ -74,6 +103,8 @@
     margin-block: var(--yl-container-margin-block);
     margin-block-start: var(--yl-container-margin-block-start);
     margin-block-end: var(--yl-container-margin-block-end);
+
+    display: var(--yl-container-display);
 
     background-color: var(--yl-container-background-color);
 
@@ -99,7 +130,21 @@
 
     box-shadow: var(--yl-container-box-shadow);
 
+    transform-style: var(--yl-container-transform-style);
+    transform: var(--yl-container-transform);
+    translate: var(--yl-container-translate);
+    scale: var(--yl-container-scale);
+    rotate: var(--yl-container-rotate);
+
     overflow: var(--yl-container-overflow);
+
+    cursor: var(--yl-container-cursor);
     z-index: var(--yl-container-z-index);
+
+    opacity: var(--yl-container-opacity);
+    filter: var(--yl-container-filter);
+    transform-origin: var(--yl-container-transform-origin);
+    transition: var(--yl-container-transition);
+    transition-property: var(--yl-container-transition-property);
   }
 }

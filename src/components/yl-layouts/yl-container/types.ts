@@ -9,17 +9,24 @@ import {
   IBoxShadow,
   IChildren,
   IClassName,
+  ICursor,
+  IDataSet,
   IDimension,
+  IDisplay,
   IEvent,
   IExtendedStyle,
-  IFlex,
-  IKey,
+  IFilter,
   IMargin,
+  IOpacity,
   IOverflow,
   IPadding,
   IPosition,
-  ITag,
+  IStateStyles,
   ITagContainer,
+  ITransform,
+  ITransformStyle,
+  ITransition,
+  IUserSelect,
   IYLMediaQuery,
   IZIndex,
 } from "@/components/yl-utils/yl-global-interfaces";
@@ -46,6 +53,7 @@ export type YLContainerStyle = `${YLContainerName}-${Extract<
   | `${EYLCSSProperties.marginBlock}`
   | `${EYLCSSProperties.marginBlockStart}`
   | `${EYLCSSProperties.marginBlockEnd}`
+  | `${EYLCSSProperties.display}`
   | `${EYLCSSProperties.borderRadius}`
   | `${EYLCSSProperties.borderStartStartRadius}`
   | `${EYLCSSProperties.borderStartEndRadius}`
@@ -65,7 +73,17 @@ export type YLContainerStyle = `${YLContainerName}-${Extract<
   | `${EYLCSSProperties.bottom}`
   | `${EYLCSSProperties.right}`
   | `${EYLCSSProperties.backgroundColor}`
+  | `${EYLCSSProperties.transformStyle}`
+  | `${EYLCSSProperties.transform}`
+  | `${EYLCSSProperties.translate}`
+  | `${EYLCSSProperties.rotate}`
+  | `${EYLCSSProperties.scale}`
+  | `${EYLCSSProperties.transition}`
+  | `${EYLCSSProperties.transitionProperty}`
+  | `${EYLCSSProperties.opacity}`
+  | `${EYLCSSProperties.filter}`
   | `${EYLCSSProperties.overflow}`
+  | `${EYLCSSProperties.cursor}`
   | `${EYLCSSProperties.zIndex}`
 >}`;
 
@@ -74,21 +92,37 @@ export interface IYLContainerStyle
 
 export interface IYLContainerProps
   extends IYLContainerStyleProps,
-    IClassName,
+    IYLContainerHTMLProps {}
+
+export interface IYLContainerHTMLProps
+  extends IClassName,
     Partial<IChildren>,
     ITagContainer,
     IEvent,
+    IDataSet,
     IExtendedStyle {}
 
 export interface IYLContainerStyleProps
+  extends IYLContainerStyleBaseProps,
+    IYLMediaQuery<IYLContainerStyleProps>,
+    IStateStyles<IYLContainerStyleProps> {}
+
+export interface IYLContainerStyleBaseProps
   extends Partial<IDimension>,
     IPadding,
     IMargin,
+    IDisplay,
     IBorderRadius,
     IBorder,
     IBoxShadow,
     IPosition,
+    IFilter,
     IBackgroundColor,
+    ITransform,
+    ITransformStyle,
+    ITransition,
     IOverflow,
     IZIndex,
-    IYLMediaQuery<IYLContainerStyleProps> {}
+    IOpacity,
+    IUserSelect,
+    ICursor {}

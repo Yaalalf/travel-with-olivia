@@ -12,13 +12,15 @@ export function YLBackgroundImage({
 
   blockSize,
   inlineSize,
-  backgroundImage,
 
+  backgroundColor,
+  backgroundImage,
   backgroundPosition,
   backgroundPositionX,
   backgroundPositionY,
   backgroundRepeat,
   backgroundSize,
+  backgroundBlendMode,
 
   position,
   bottom,
@@ -27,6 +29,7 @@ export function YLBackgroundImage({
   top,
 
   zIndex,
+  transform,
 
   mediaQuery = {},
 }: IYLBackgroundImageProps) {
@@ -38,11 +41,13 @@ export function YLBackgroundImage({
     props: {
       inlineSize,
       blockSize,
+      backgroundColor,
       backgroundPosition,
       backgroundPositionX,
       backgroundPositionY,
       backgroundRepeat,
       backgroundSize,
+      backgroundBlendMode,
       bottom,
       left,
       position,
@@ -50,6 +55,7 @@ export function YLBackgroundImage({
       top,
       backgroundImage,
       zIndex,
+      transform,
     },
     mediaQuery: mediaQuery,
     initProps: (props) => {

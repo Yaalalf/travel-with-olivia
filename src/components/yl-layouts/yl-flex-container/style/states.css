@@ -1,0 +1,32 @@
+@layer yl-layout{
+    
+   
+      /**********************HoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-hover : var(--yl-flex-container-flex-direction);--yl-flex-container-align-items-hover : var(--yl-flex-container-align-items);--yl-flex-container-justify-content-hover : var(--yl-flex-container-justify-content);--yl-flex-container-gap-hover : var(--yl-flex-container-gap);--yl-flex-container-flex-wrap-hover : var(--yl-flex-container-flex-wrap); 
+  } 
+  /**************************HoverStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:hover{
+    flex-direction: var(--yl-flex-container-flex-direction-hover);align-items: var(--yl-flex-container-align-items-hover);justify-content: var(--yl-flex-container-justify-content-hover);gap: var(--yl-flex-container-gap-hover);flex-wrap: var(--yl-flex-container-flex-wrap-hover); 
+      } 
+
+      [data-parent-hover="true"]:hover .yl-flex-container:hover{
+        flex-direction: var(--yl-flex-container-flex-direction-hover);align-items: var(--yl-flex-container-align-items-hover);justify-content: var(--yl-flex-container-justify-content-hover);gap: var(--yl-flex-container-gap-hover);flex-wrap: var(--yl-flex-container-flex-wrap-hover); 
+          }  
+ 
+    
+      /**********************ParentHoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-parent-hover : var(--yl-flex-container-flex-direction);--yl-flex-container-align-items-parent-hover : var(--yl-flex-container-align-items);--yl-flex-container-justify-content-parent-hover : var(--yl-flex-container-justify-content);--yl-flex-container-gap-parent-hover : var(--yl-flex-container-gap);--yl-flex-container-flex-wrap-parent-hover : var(--yl-flex-container-flex-wrap); 
+  } 
+  /**************************ParentHoverStyles********************************/
+  /**********************************************************/
+  [data-parent-hover="true"]:hover .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-parent-hover);align-items: var(--yl-flex-container-align-items-parent-hover);justify-content: var(--yl-flex-container-justify-content-parent-hover);gap: var(--yl-flex-container-gap-parent-hover);flex-wrap: var(--yl-flex-container-flex-wrap-parent-hover); 
+      } 
+  
+
+  }

@@ -1,0 +1,14 @@
+@layer yl-layout{
+    @media (1280px <= width < 1440px){
+      /**********************Vars****************************/
+      /**********************************************************/
+    .yl-masked-image{
+    --yl-masked-image-inline-size-1280-1440 : var(--yl-masked-image-inline-size-1024-1920);--yl-masked-image-block-size-1280-1440 : var(--yl-masked-image-block-size-1024-1920);--yl-masked-image-background-color-1280-1440 : var(--yl-masked-image-background-color-1024-1920);--yl-masked-image-mask-image-1280-1440 : var(--yl-masked-image-mask-image-1024-1920);--yl-masked-image-mask-position-1280-1440 : var(--yl-masked-image-mask-position-1024-1920);--yl-masked-image-mask-size-1280-1440 : var(--yl-masked-image-mask-size-1024-1920);--yl-masked-image-mask-repeat-1280-1440 : var(--yl-masked-image-mask-repeat-1024-1920);--yl-masked-image-position-1280-1440 : var(--yl-masked-image-position-1024-1920);--yl-masked-image-top-1280-1440 : var(--yl-masked-image-top-1024-1920);--yl-masked-image-left-1280-1440 : var(--yl-masked-image-left-1024-1920);--yl-masked-image-right-1280-1440 : var(--yl-masked-image-right-1024-1920);--yl-masked-image-bottom-1280-1440 : var(--yl-masked-image-bottom-1024-1920);--yl-masked-z-index-1280-1440 : var(--yl-masked-z-index-1024-1920); 
+  } 
+  /**************************Styles********************************/
+  /**********************************************************/
+  .yl-masked-image{
+    inline-size: var(--yl-masked-image-inline-size-1280-1440);block-size: var(--yl-masked-image-block-size-1280-1440);background-color: var(--yl-masked-image-background-color-1280-1440);mask-image: var(--yl-masked-image-mask-image-1280-1440);mask-repeat: var(--yl-masked-image-mask-repeat-1280-1440);mask-position: var(--yl-masked-image-mask-position-1280-1440);mask-size: var(--yl-masked-image-mask-size-1280-1440);position: var(--yl-masked-image-position-1280-1440);top: var(--yl-masked-image-top-1280-1440);left: var(--yl-masked-image-left-1280-1440);right: var(--yl-masked-image-right-1280-1440);bottom: var(--yl-masked-image-bottom-1280-1440);z-index: var(--yl-masked-image-z-index-1280-1440); 
+      } 
+    } 
+  }

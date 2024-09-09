@@ -1,6 +1,7 @@
 import {
   EYLComponentsNames,
   EYLMediaQueryBreakPoints,
+  YLComponentName,
 } from "../yl-utils/yl-global-enums";
 import {
   YLComponentMediaQueryStyle,
@@ -31,7 +32,7 @@ export function useYLComponentStyleMediaQueryVars<
   initProps && initProps(props);
 
   let componentStyle = createStyleObject<YLComponentStyle, IYLComponentProps>(
-    name,
+    name as YLComponentName,
     props
   );
 

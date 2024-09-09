@@ -3,10 +3,13 @@ import {
   YLCSSProperties,
 } from "@/components/yl-utils/yl-global-enums";
 import {
+  IBackgroundColor,
   IBackgroundImage,
   IClassName,
   IDimension,
+  IFilter,
   IPosition,
+  ITransform,
   IYLMediaQuery,
   IZIndex,
 } from "@/components/yl-utils/yl-global-interfaces";
@@ -19,12 +22,14 @@ export type YLBackgroundImageStyle = `${YLBackgroundImageName}-${Extract<
   YLCSSProperties,
   | `${EYLCSSProperties.inlineSize}`
   | `${EYLCSSProperties.blockSize}`
+  | `${EYLCSSProperties.backgroundColor}`
   | `${EYLCSSProperties.backgroundImage}`
   | `${EYLCSSProperties.backgroundRepeat}`
   | `${EYLCSSProperties.backgroundPosition}`
   | `${EYLCSSProperties.backgroundPositionX}`
   | `${EYLCSSProperties.backgroundPositionY}`
   | `${EYLCSSProperties.backgroundSize}`
+  | `${EYLCSSProperties.transform}`
   | `${EYLCSSProperties.position}`
   | `${EYLCSSProperties.top}`
   | `${EYLCSSProperties.left}`
@@ -44,5 +49,7 @@ export interface IYLBackgroundImageStyleProps
   extends Partial<IDimension>,
     IPosition,
     IBackgroundImage,
+    IBackgroundColor,
     IZIndex,
+    ITransform,
     IYLMediaQuery<IYLBackgroundImageStyleProps> {}

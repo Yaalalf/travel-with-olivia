@@ -12,7 +12,11 @@
   src: url(/fonts/Nunito-VariableFont_wght.ttf);
   weight: 500;
 }
-
+@font-face {
+  font-family: Inter;
+  src: url(/fonts/Inter-VariableFont_opsz,wght.ttf);
+  weight: 500;
+}
 /*****************************Animations******************************/
 @keyframes fadeIn {
   from {
@@ -211,4 +215,8 @@
     transform: translateX(100px);
     opacity: 0;
   }
+}
+
+.test {
+  color: #545454;
 }

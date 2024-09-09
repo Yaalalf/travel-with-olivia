@@ -20,7 +20,7 @@ import { ETag } from "@/components/yl-utils/yl-global-interfaces";
 export default function YLTextHeader({
   children,
   className,
-  tag = ETag.h1,
+  tag = "h1",
 
   inlineSize,
   blockSize,
