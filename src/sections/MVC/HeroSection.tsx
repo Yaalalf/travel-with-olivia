@@ -71,7 +71,7 @@ export default function MVCHeroSection() {
                 textTransform="capitalize"
               >
                 {" "}
-                for Your Home's Security
+                for Your Home&apos;s Security
               </YLText>
             </YLTextHeader>
             <YLTextHeader
