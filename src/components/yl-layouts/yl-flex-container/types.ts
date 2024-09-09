@@ -56,11 +56,13 @@ export interface IYLFlexContainerProps
     IYLContainerHTMLProps {}
 
 export interface IYLFlexContainerStyleProps
-  extends Omit<IYLFlexContainerStyleBaseProps, "display">,
+  extends IYLFlexContainerStyleBaseProps,
     IYLMediaQuery<IYLFlexContainerStyleProps> {
   display?: "flex" | "inline-flex";
 }
 
 export interface IYLFlexContainerStyleBaseProps
-  extends IYLContainerStyleBaseProps,
-    IFlex {}
+  extends Omit<IYLContainerStyleBaseProps, "display">,
+    IFlex {
+  display?: "flex" | "inline-flex";
+}
