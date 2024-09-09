@@ -3,33 +3,11 @@ import {
   YLCSSProperties,
 } from "@/components/yl-utils/yl-global-enums";
 import {
-  DisplayValues,
-  IBackgroundColor,
-  IBorder,
-  IBorderRadius,
-  IBoxShadow,
-  IChildren,
-  IClassName,
-  ICursor,
-  IDimension,
-  IDisplay,
-  IEvent,
-  IExtendedStyle,
   IFlex,
-  IMargin,
-  IOverflow,
-  IPadding,
-  IPosition,
-  ITag,
-  ITransform,
-  ITransition,
   IYLMediaQuery,
-  IZIndex,
-  TagContainer,
 } from "@/components/yl-utils/yl-global-interfaces";
 import {
   IYLContainerHTMLProps,
-  IYLContainerProps,
   IYLContainerStyle,
   IYLContainerStyleBaseProps,
 } from "../yl-container/types";

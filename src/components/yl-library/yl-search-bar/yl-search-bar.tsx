@@ -10,9 +10,7 @@ import YLInput from "../yl-input/yl-input";
 import "./base.css";
 import YLMenu from "../yl-menu";
 import { ReactNode, useRef, useState } from "react";
-import YLList, {
-  EYLListDirection,
-} from "@/components/yl-layouts/yl-list/yl-list";
+import YLList from "@/components/yl-layouts/yl-list/yl-list";
 import YlButton, { EYLButtonStyle } from "../yl-button";
 import { EYLButtonSize } from "../yl-button/types";
 
@@ -51,7 +49,6 @@ export default function YLSearchBar<T>(props: IYLSearchBarProps<T>) {
                   ? props.datasetBuilder
                   : (item) => <>{item}</>
               }
-              direction={EYLListDirection.column}
             />
           </YLMenu>
         }
