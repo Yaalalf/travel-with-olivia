@@ -1,9 +1,14 @@
 import { MutableRefObject, useEffect } from "react";
 
-export default function useRipple<T extends HTMLElement>(
-  rippleTrigger: MutableRefObject<T | null>,
-  rippleHandler: MutableRefObject<T | null> = rippleTrigger
-) {
+export default function useRipple<T extends HTMLElement>({
+  rippleTrigger,
+  rippleHandler = rippleTrigger,
+  options = { color: "#ffffff88" },
+}: {
+  rippleTrigger: MutableRefObject<T | null>;
+  rippleHandler?: MutableRefObject<T | null>;
+  options?: { color: string };
+}) {
   useEffect(() => {
     rippleTrigger.current &&
       rippleTrigger.current.addEventListener("click", ripple);
@@ -45,6 +50,7 @@ export default function useRipple<T extends HTMLElement>(
       ripple.style.height = `${buttonHeight}px`;
       ripple.style.top = `${rippleY}px`;
       ripple.style.left = `${rippleX}px`;
+      ripple.style.backgroundColor = options.color;
 
       ripple.classList.add("yl-ripple-animation");
 

@@ -60,6 +60,7 @@ export type YLCSSProperties =
   | "text-transform"
   | "text-shadow"
   | "text-align"
+  | "text-decoration"
   | "background-color"
   | "background-image"
   | "background-repeat"
@@ -105,7 +106,8 @@ export type YLCSSProperties =
   | "cursor"
   | "backdrop-filter"
   | "user-select"
-  | "filter";
+  | "filter"
+  | "box-sizing";
 
 export enum EYLCSSProperties {
   inlineSize = "inline-size",
@@ -143,6 +145,7 @@ export enum EYLCSSProperties {
   textTransform = "text-transform",
   textShadow = "text-shadow",
   textAlign = "text-align",
+  textDecoration = "text-decoration",
 
   backgroundColor = "background-color",
   backgroundImage = "background-image",
@@ -202,6 +205,7 @@ export enum EYLCSSProperties {
   userSelect = "user-select",
   cursor = "cursor",
   zIndex = "z-index",
+  boxSizing = "box-sizing",
 }
 
 /********************************EmptyTextPlaceholder**************************************************/
@@ -240,11 +244,22 @@ export enum EYLComponentsNames {
   YL_LIST = "yl-list",
 }
 /********************YLStateStylesNames********************/
-export type YLStateStylesName = "hover" | "parent-hover";
+export type YLStateStylesName =
+  | "hover"
+  | "parent-hover"
+  | "child-hover"
+  | "active"
+  | "parent-active"
+  | "child-active";
 
 export enum EYLStateStylesNames {
   HOVER = "hover",
   PARENT_HOVER = "parent-hover",
+  CHILD_HOVER = "child-hover",
+
+  ACTIVE = "active",
+  PARENT_ACTIVE = "parent-active",
+  CHILD_ACTIVE = "child-active",
 }
 /********************YLColorSwatch**********************/
 
@@ -294,3 +309,11 @@ export enum EGreySwatch {
 }
 
 export type ColorSwatch = blueSwatch | whiteSwatch | greySwatch;
+
+/********************YLIcons**********************/
+
+export enum EYLIcons {
+  ARROW_BACK = "arrow_back_icon",
+  ARROW_FORWARD = "arrow_forward_icon",
+}
+export type YLIcons = "arrow_back_icon" | "arrow_forward_icon";

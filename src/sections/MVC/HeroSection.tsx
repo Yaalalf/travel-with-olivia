@@ -1,4 +1,3 @@
-import { YLBackgroundColor } from "@/components/yl-layouts/yl-background-color/yl-background-color";
 import YlContainer from "@/components/yl-layouts/yl-container/yl-container";
 import { YLDecoratorImage } from "@/components/yl-layouts/yl-decorator-image/yl-decorator-image";
 import YlFlexContainer from "@/components/yl-layouts/yl-flex-container/yl-flex-container";
@@ -9,14 +8,16 @@ import YLBackgroundContainer from "@/components/yl-web-landing-page/yl-backgroun
 
 import "./base.css";
 import YLTransformCarrousel from "@/components/yl-layouts/yl-transform-carrousel.tsx/yl-transform-carrousel";
-import YlButton from "@/components/yl-layouts/yl-button/yl-button";
+import { EYLButtonSize } from "@/components/yl-layouts/yl-buttons/yl-base-button/types";
+import YlFilledButton from "@/components/yl-layouts/yl-buttons/yl-filled-button/yl-filled-button";
+import YlButton from "@/components/yl-layouts/yl-buttons/yl-button/yl-button";
 
 export default function MVCHeroSection() {
   return (
     <>
       <YLBackgroundContainer
         className="yl-theme-basic"
-        blockSize="600px"
+        blockSize="720px"
         imgUrl="/mvc/hero-2.jpg"
         flexContainerStyle={{ overflow: "hidden" }}
         backgroundImageStyle={{
@@ -41,7 +42,7 @@ export default function MVCHeroSection() {
             inlineSize="560px"
             blockSize="100%"
             gap="40px"
-            paddingBlockStart="80px"
+            paddingBlockStart="180px"
             flexDirection="column"
             alignItems="flex-start"
             justifyContent="flex-start"
@@ -56,21 +57,20 @@ export default function MVCHeroSection() {
               color={EWhiteSwatch.white3}
               tag="h2"
             >
-              <YLText tag="span" color="#e0b08e">
-                Durability{" "}
-              </YLText>
+              <YLText tag="span" color="#7bbc4f" textDecoration="underline">
+                Durability
+              </YLText>{" "}
               and{" "}
-              <YLText tag="span" color="#e0b08e">
-                Style{" "}
+              <YLText tag="span" color="#7bbc4f" textDecoration="underline">
+                Style
               </YLText>
               <br />
               <YLText
                 fontSize="12px"
-                color={EWhiteSwatch.white5}
+                color="#91938d"
                 tag="span"
                 textTransform="capitalize"
               >
-                {" "}
                 for Your Home&apos;s Security
               </YLText>
             </YLTextHeader>
@@ -92,7 +92,12 @@ export default function MVCHeroSection() {
               </YLText>
               for Your Home
             </YLTextHeader>
-            <YlButton>Get A Quote</YlButton>
+            <YlButton
+              rightIcon="/search-icon.svg"
+              label="Get A Quote"
+              size={EYLButtonSize.Large}
+              theme={{ defaultColor: "#48752b" }}
+            ></YlButton>
             <YlFlexContainer
               position="absolute"
               bottom="40px"
@@ -145,7 +150,8 @@ export default function MVCHeroSection() {
               inlineSize="50%"
               blockSize="50%"
               infinite
-              autoplay
+              // autoplay
+              controls
               options={{ rotationX: 20 }}
               items={[
                 <YLDecoratorImage

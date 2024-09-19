@@ -33,6 +33,7 @@
     --yl-text-text-transform: inherit;
     --yl-text-text-shadow: inherit;
     --yl-text-text-align: inherit;
+    --yl-text-text-decoration: inherit;
   }
   /**************************Styles********************************/
   /**********************************************************/
@@ -65,5 +66,6 @@
     text-transform: var(--yl-text-text-transform);
     text-align: var(--yl-text-text-align);
     text-shadow: var(--yl-text-text-shadow);
+    text-decoration: var(--yl-text-text-decoration);
   }
 }

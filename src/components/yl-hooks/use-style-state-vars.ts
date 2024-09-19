@@ -12,17 +12,32 @@ export function useYLComponentStateStylesVars<
   name,
   parentHoverStyle,
   hoverStyle,
+  activeStyle,
+  parentActiveStyle,
+  childActiveStyle,
+  childHoverStyle,
   initProps,
 }: {
   name: EYLComponentsNames;
   hoverStyle: IYLComponentProps;
   parentHoverStyle: IYLComponentProps;
+  childHoverStyle: IYLComponentProps;
+
+  activeStyle: IYLComponentProps;
+  parentActiveStyle: IYLComponentProps;
+  childActiveStyle: IYLComponentProps;
+
   initProps?: (props: Partial<IYLComponentProps>) => void;
 }) {
   //Working in the styles
   if (initProps) {
     initProps(hoverStyle);
     initProps(parentHoverStyle);
+    initProps(childHoverStyle);
+
+    initProps(activeStyle);
+    initProps(parentActiveStyle);
+    initProps(childActiveStyle);
   }
 
   let componentHoverStyle = createStateStyleObject<
@@ -41,8 +56,48 @@ export function useYLComponentStateStylesVars<
     parentHoverStyle
   );
 
+  let componentChildHoverStyle = createStateStyleObject<
+    YLComponentStyle,
+    YLStateStylesName,
+    IYLComponentProps
+  >(
+    name as EYLComponentsNames,
+    EYLStateStylesNames.CHILD_HOVER,
+    childHoverStyle
+  );
+
+  let componentActiveStyle = createStateStyleObject<
+    YLComponentStyle,
+    YLStateStylesName,
+    IYLComponentProps
+  >(name as EYLComponentsNames, EYLStateStylesNames.ACTIVE, activeStyle);
+
+  let componentParentActiveStyle = createStateStyleObject<
+    YLComponentStyle,
+    YLStateStylesName,
+    IYLComponentProps
+  >(
+    name as EYLComponentsNames,
+    EYLStateStylesNames.PARENT_ACTIVE,
+    parentActiveStyle
+  );
+
+  let componentChildActiveStyle = createStateStyleObject<
+    YLComponentStyle,
+    YLStateStylesName,
+    IYLComponentProps
+  >(
+    name as EYLComponentsNames,
+    EYLStateStylesNames.CHILD_ACTIVE,
+    childActiveStyle
+  );
+
   return {
     hoverStyles: componentHoverStyle,
     parentHoverStyles: componentParentHoverStyle,
+    childHoverStyles: componentChildHoverStyle,
+    activeStyles: componentActiveStyle,
+    parentActiveStyles: componentParentActiveStyle,
+    childActiveStyles: componentChildActiveStyle,
   };
 }

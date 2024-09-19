@@ -4,6 +4,7 @@ import {
 } from "@/components/yl-utils/yl-global-enums";
 import {
   IFlex,
+  IStateStyles,
   IYLMediaQuery,
 } from "@/components/yl-utils/yl-global-interfaces";
 import {
@@ -35,7 +36,8 @@ export interface IYLFlexContainerProps
 
 export interface IYLFlexContainerStyleProps
   extends IYLFlexContainerStyleBaseProps,
-    IYLMediaQuery<IYLFlexContainerStyleProps> {
+    IYLMediaQuery<IYLFlexContainerStyleProps>,
+    IStateStyles<IYLFlexContainerStyleProps> {
   display?: "flex" | "inline-flex";
 }
 

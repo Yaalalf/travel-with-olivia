@@ -1,0 +1,11 @@
+import generate from "@babel/generator";
+
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+export default function processJSXExpressionContainer({ path, expression }) {
+  const { code } = generate.default(expression);
+  const value = eval(code);
+  return value;
+}

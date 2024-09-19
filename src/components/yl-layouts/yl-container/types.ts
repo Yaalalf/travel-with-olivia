@@ -7,6 +7,7 @@ import {
   IBorder,
   IBorderRadius,
   IBoxShadow,
+  IBoxSizing,
   IChildren,
   IClassName,
   ICursor,
@@ -23,6 +24,7 @@ import {
   IPosition,
   IStateStyles,
   ITagContainer,
+  IText,
   ITransform,
   ITransformStyle,
   ITransition,
@@ -73,6 +75,7 @@ export type YLContainerStyle = `${YLContainerName}-${Extract<
   | `${EYLCSSProperties.bottom}`
   | `${EYLCSSProperties.right}`
   | `${EYLCSSProperties.backgroundColor}`
+  | `${EYLCSSProperties.color}`
   | `${EYLCSSProperties.transformStyle}`
   | `${EYLCSSProperties.transform}`
   | `${EYLCSSProperties.translate}`
@@ -85,6 +88,7 @@ export type YLContainerStyle = `${YLContainerName}-${Extract<
   | `${EYLCSSProperties.overflow}`
   | `${EYLCSSProperties.cursor}`
   | `${EYLCSSProperties.zIndex}`
+  | `${EYLCSSProperties.boxSizing}`
 >}`;
 
 export interface IYLContainerStyle
@@ -125,4 +129,6 @@ export interface IYLContainerStyleBaseProps
     IZIndex,
     IOpacity,
     IUserSelect,
-    ICursor {}
+    ICursor,
+    IText,
+    IBoxSizing {}

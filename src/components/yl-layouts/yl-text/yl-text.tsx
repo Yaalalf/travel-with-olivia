@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import "./index.css";
 import {
   IYLTextProps,
@@ -17,6 +17,7 @@ import {
   initPaddingValues,
 } from "@/components/yl-utils/yl-utils";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { useYLComponentStateStylesVars } from "@/components/yl-hooks/use-style-state-vars";
 export default function YLText({
   children,
   className,
@@ -24,6 +25,10 @@ export default function YLText({
 
   inlineSize,
   blockSize,
+  maxBlockSize,
+  maxInlineSize,
+  minBlockSize,
+  minInlineSize,
 
   padding,
   paddingBlock,
@@ -49,9 +54,21 @@ export default function YLText({
   textTransform,
   textShadow,
   textAlign,
+  textDecoration,
 
   mediaQuery = {},
+  hoverStyle = {},
+  parentHoverStyle = {},
+  childHoverStyle = {},
+  activeStyle = {},
+  parentActiveStyle = {},
+  childActiveStyle = {},
 }: IYLTextProps) {
+  const initProps = (props: IYLTextProps) => {
+    initPaddingValues(props);
+    initMarginValues(props);
+  };
+
   const { styles } = useYLComponentStyleMediaQueryVars<
     YLTextStyle,
     IYLTextStyleProps
@@ -59,12 +76,12 @@ export default function YLText({
     name: EYLComponentsNames.YL_TEXT,
     props: {
       blockSize,
-      color,
-      fontFamily,
-      fontSize,
-      fontWeight,
       inlineSize,
-      lineHeight,
+      maxBlockSize,
+      maxInlineSize,
+      minBlockSize,
+      minInlineSize,
+
       margin,
       marginBlock,
       marginBlockEnd,
@@ -72,6 +89,7 @@ export default function YLText({
       marginInline,
       marginInlineEnd,
       marginInlineStart,
+
       padding,
       paddingBlock,
       paddingBlockEnd,
@@ -79,16 +97,32 @@ export default function YLText({
       paddingInline,
       paddingInlineEnd,
       paddingInlineStart,
+
       textAlign,
       textShadow,
       textTransform,
+      color,
+      fontFamily,
+      fontSize,
+      fontWeight,
+      lineHeight,
+      textDecoration,
     },
     mediaQuery: mediaQuery,
-    initProps: (props) => {
-      initPaddingValues(props);
-      initMarginValues(props);
-    },
+    initProps,
   });
+
+  const { hoverStyles, parentHoverStyles, activeStyles, parentActiveStyles } =
+    useYLComponentStateStylesVars<YLTextStyle, IYLTextStyleProps>({
+      name: EYLComponentsNames.YL_TEXT,
+      hoverStyle,
+      parentHoverStyle,
+      childHoverStyle,
+      activeStyle,
+      parentActiveStyle,
+      childActiveStyle,
+      initProps,
+    });
 
   return TextFactory(
     {
@@ -96,30 +130,35 @@ export default function YLText({
       className,
       tag,
     },
-    styles
+    {
+      ...styles,
+      ...hoverStyles,
+      ...parentHoverStyles,
+      ...activeStyles,
+      ...parentActiveStyles,
+    }
   );
 }
 
 function TextFactory(
   props: Pick<IYLTextProps, "children" | "className" | "tag">,
-  style: IYLTextStyle
+  styles: IYLTextStyle
 ): ReactNode {
+  const propsObject = {
+    className: `yl-text ${props.className || ""}`,
+    style: styles as CSSProperties,
+  };
+
   switch (props.tag) {
     case ETag.p:
       return (
-        <p
-          className={`yl-text ${props.className || ""}`}
-          style={style as React.CSSProperties}
-        >
+        <p {...propsObject}>
           {props.children ? props.children : ETextPlaceholder.LONG}
         </p>
       );
     case ETag.span:
       return (
-        <span
-          className={`yl-text ${props.className || ""}`}
-          style={style as React.CSSProperties}
-        >
+        <span {...propsObject}>
           {props.children ? props.children : ETextPlaceholder.SMALL}
         </span>
       );

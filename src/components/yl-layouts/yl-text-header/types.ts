@@ -8,6 +8,7 @@ import {
   IDimension,
   IMargin,
   IPadding,
+  IStateStyles,
   ITag,
   IText,
   IYLMediaQuery,
@@ -44,6 +45,7 @@ export type YLTextHeaderStyle = `${YLTextHeaderName}-${Extract<
   | `${EYLCSSProperties.textTransform}`
   | `${EYLCSSProperties.textShadow}`
   | `${EYLCSSProperties.textAlign}`
+  | `${EYLCSSProperties.textDecoration}`
 >}`;
 
 export interface IYLTextHeaderStyle
@@ -61,7 +63,8 @@ export interface IYLTextHeaderStyleProps
     IPadding,
     IMargin,
     IText,
-    IYLMediaQuery<IYLTextHeaderStyleProps> {}
+    IYLMediaQuery<IYLTextHeaderStyleProps>,
+    IStateStyles<IYLTextHeaderStyleProps> {}
 
 export enum EYLTextHeaderTransform {
   capitalize = "capitalize",

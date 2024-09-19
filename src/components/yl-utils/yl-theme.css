@@ -83,46 +83,40 @@
   /**************yl-button-filled*************************/
 
   .yl-theme-basic .yl-button.yl-button-filled {
-    --yl-button-background-color: rgb(80, 114, 215);
+    --yl-button-background-color: #5072d7;
 
-    --yl-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.064);
+    --yl-button-box-shadow: 0px 3px 6px #00000010;
 
-    --yl-button-color: rgb(232, 234, 240);
+    --yl-button-color: #e8eaf0;
     --yl-button-font-size: 12px;
     --yl-button-font-weight: 600;
   }
 
   .yl-theme-basic .yl-button.yl-button-filled:has(.yl-button-action:hover) {
-    --yl-button-background-color: rgb(115, 142, 220);
-    --yl-button-color: rgb(235, 237, 243);
+    --yl-button-background-color: #738edc;
+    --yl-button-color: #ebedf3;
   }
 
   .yl-theme-basic .yl-button.yl-button-filled:has(.yl-button-action:active) {
-    --yl-button-background-color: rgb(69, 93, 163);
+    --yl-button-background-color: #455da3;
   }
 
   .yl-theme-basic .yl-button.yl-button-filled .yl-disabled-foreground {
-    --yl-button-disabled-foreground-color: rgba(0, 0, 0, 0.153);
+    --yl-button-disabled-foreground-color: #00000027;
   }
 
   .yl-theme-basic .yl-button.yl-button-filled .yl-button-icon {
-    --yl-button-icon-color: rgb(218, 223, 237);
+    --yl-button-icon-color: #dadfed;
   }
 
   .yl-theme-basic
     .yl-button.yl-button-filled:has(.yl-button-action:hover)
     .yl-button-icon {
-    --yl-button-icon-color: rgb(235, 237, 243);
-  }
-
-  .yl-theme-basic
-    .yl-button.yl-button-filled:has(.yl-button-action:hover)
-    .yl-button-icon {
-    --yl-button-icon-color: rgb(235, 237, 243);
+    --yl-button-icon-color: #ebedf3;
   }
 
   .yl-theme-basic .yl-button.yl-button-filled span.yl-ripple {
-    --yl-button-ripple-color: rgba(226, 229, 238, 0.539);
+    --yl-button-ripple-color: #e2e5ee89;
   }
 
   /**************yl-button-outlined*************************/
@@ -130,49 +124,49 @@
   .yl-theme-basic .yl-button.yl-button-outlined {
     --yl-button-background-color: transparent;
 
-    --yl-button-color: rgb(80, 114, 215);
-    --yl-button-border: 2px solid rgb(80, 114, 215);
+    --yl-button-color: #5072d7;
+    --yl-button-border: 2px solid #5072d7;
 
     --yl-button-font-size: 12px;
     --yl-button-font-weight: 600;
   }
 
   .yl-theme-basic .yl-button.yl-button-outlined:has(.yl-button-action:hover) {
-    --yl-button-background-color: rgba(184, 198, 237, 0.276);
+    --yl-button-background-color: #b8c6ed46;
 
-    --yl-button-color: rgb(98, 131, 231);
-    --yl-button-border: 2px solid rgb(92, 125, 224);
+    --yl-button-color: #6283e7;
+    --yl-button-border: 2px solid #5c7de0;
   }
 
   .yl-theme-basic .yl-button.yl-button-outlined:has(.yl-button-action:active) {
-    --yl-button-background-color: rgba(147, 165, 214, 0.452);
+    --yl-button-background-color: #93a5d673;
 
-    --yl-button-color: rgb(60, 89, 178);
-    --yl-button-border: 2px solid rgb(51, 81, 171);
+    --yl-button-color: #3c59b2;
+    --yl-button-border: 2px solid #3351ab;
   }
 
   .yl-theme-basic .yl-button.yl-button-outlined span.yl-ripple {
-    --yl-button-ripple-color: rgba(51, 81, 171, 0.539);
+    --yl-button-ripple-color: #3351ab89;
   }
 
   .yl-theme-basic .yl-button.yl-button-outlined .yl-disabled-foreground {
-    --yl-button-disabled-foreground-color: rgba(0, 0, 0, 0.094);
+    --yl-button-disabled-foreground-color: #00000018;
   }
 
   .yl-theme-basic .yl-button.yl-button-outlined .yl-button-icon {
-    --yl-button-icon-color: rgb(59, 90, 183);
+    --yl-button-icon-color: #3b5ab7;
   }
 
   .yl-theme-basic
     .yl-button.yl-button-outlined:has(.yl-button-action:hover)
     .yl-button-icon {
-    --yl-button-icon-color: rgb(98, 131, 231);
+    --yl-button-icon-color: #6283e7;
   }
 
   .yl-theme-basic
     .yl-button.yl-button-outlined:has(.yl-button-action:active)
     .yl-button-icon {
-    --yl-button-icon-color: rgb(60, 89, 178);
+    --yl-button-icon-color: #3c59b2;
   }
 
   .yl-theme-basic
@@ -186,40 +180,40 @@
   .yl-theme-basic .yl-button.yl-button-texted {
     --yl-button-background-color: transparent;
 
-    --yl-button-color: rgb(80, 114, 215);
+    --yl-button-color: #5072d7;
 
     --yl-button-font-size: 12px;
     --yl-button-font-weight: 600;
   }
 
   .yl-theme-basic .yl-button.yl-button-texted:has(.yl-button-action:hover) {
-    --yl-button-background-color: rgba(184, 198, 237, 0.276);
+    --yl-button-background-color: #b8c6ed46;
 
-    --yl-button-color: rgb(98, 131, 231);
+    --yl-button-color: #6283e7;
   }
 
   .yl-theme-basic .yl-button.yl-button-texted:has(.yl-button-action:active) {
-    --yl-button-background-color: rgba(147, 165, 214, 0.452);
+    --yl-button-background-color: #93a5d673;
 
-    --yl-button-color: rgb(60, 89, 178);
+    --yl-button-color: #3c59b2;
   }
 
   .yl-theme-basic .yl-button.yl-button-texted span.yl-ripple {
-    --yl-button-ripple-color: rgba(51, 81, 171, 0.539);
+    --yl-button-ripple-color: #3351ab89;
   }
 
   .yl-theme-basic .yl-button.yl-button-texted .yl-disabled-foreground {
-    --yl-button-disabled-foreground-color: rgba(0, 0, 0, 0.059);
+    --yl-button-disabled-foreground-color: #0000000f;
   }
 
   .yl-theme-basic .yl-button.yl-button-texted .yl-button-icon {
-    --yl-button-icon-color: rgb(80, 114, 215);
+    --yl-button-icon-color: #5072d7;
   }
 
   .yl-theme-basic
     .yl-button.yl-button-texted:has(.yl-button-action:active)
     .yl-button-icon {
-    --yl-button-icon-color: rgb(60, 89, 178);
+    --yl-button-icon-color: #3c59b2;
   }
 
   .yl-theme-basic
@@ -231,36 +225,36 @@
   /**************yl-button-elevated*************************/
 
   .yl-theme-basic .yl-button.yl-button-elevated {
-    --yl-button-background-color: rgb(241, 243, 248);
+    --yl-button-background-color: #f1f3f8;
 
-    --yl-button-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.29);
+    --yl-button-box-shadow: 0px 3px 6px #0000004a;
 
-    --yl-button-color: rgb(96, 122, 200);
+    --yl-button-color: #607ac8;
     --yl-button-font-size: 12px;
     --yl-button-font-weight: 600;
   }
 
   .yl-theme-basic .yl-button.yl-button-elevated:has(.yl-button-action:hover) {
-    --yl-button-background-color: rgb(229, 232, 239);
-    --yl-button-color: rgb(69, 93, 163);
+    --yl-button-background-color: #e5e8ef;
+    --yl-button-color: #455da3;
   }
 
   .yl-theme-basic .yl-button.yl-button-elevated:has(.yl-button-action:active) {
-    --yl-button-background-color: rgb(209, 214, 227);
+    --yl-button-background-color: #d1d6e3;
   }
 
   .yl-theme-basic .yl-button.yl-button-elevated .yl-disabled-foreground {
-    --yl-button-disabled-foreground-color: rgba(0, 0, 0, 0.153);
+    --yl-button-disabled-foreground-color: #00000027;
   }
 
   .yl-theme-basic .yl-button.yl-button-elevated .yl-button-icon {
-    --yl-button-icon-color: rgb(69, 93, 163);
+    --yl-button-icon-color: #455da3;
   }
 
   .yl-theme-basic
     .yl-button.yl-button-elevated:has(.yl-button-action:hover)
     .yl-button-icon {
-    --yl-button-icon-color: rgb(69, 93, 163);
+    --yl-button-icon-color: #455da3;
   }
 
   .yl-theme-basic
@@ -270,6 +264,6 @@
   }
 
   .yl-theme-basic .yl-button.yl-button-elevated span.yl-ripple {
-    --yl-button-ripple-color: rgba(51, 81, 171, 0.539);
+    --yl-button-ripple-color: #3351ab89;
   }
 }

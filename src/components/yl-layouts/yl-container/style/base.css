@@ -29,6 +29,7 @@
     --yl-container-margin-block: 0;
     --yl-container-margin-block-start: 0;
     --yl-container-margin-block-end: 0;
+
     --yl-container-display: block;
 
     --yl-container-background-color: transparent;
@@ -55,6 +56,11 @@
 
     --yl-container-box-shadow: none;
 
+    --yl-container-color: inherit;
+    --yl-container-font-family: inherit;
+    --yl-container-font-size: inherit;
+    --yl-container-font-weight: inherit;
+
     --yl-container-transform-style: initial;
     --yl-container-transform: none;
     --yl-container-translate: none;
@@ -67,7 +73,7 @@
 
     --yl-container-transition-property: none;
 
-    --yl-container-cursor: default;
+    --yl-container-cursor: inherit;
 
     --yl-container-opacity: 1;
 
@@ -75,6 +81,7 @@
 
     --yl-container-overflow: visible;
     --yl-container-z-index: 1;
+    --yl-container-box-sizing: border-box;
   }
   /**************************Styles********************************/
   /**********************************************************/
@@ -130,6 +137,11 @@
 
     box-shadow: var(--yl-container-box-shadow);
 
+    color: var(--yl-container-color);
+    font-family: var(--yl-container-font-family);
+    font-size: var(--yl-container-font-size);
+    font-weight: var(--yl-container-font-weight);
+
     transform-style: var(--yl-container-transform-style);
     transform: var(--yl-container-transform);
     translate: var(--yl-container-translate);
@@ -146,5 +158,7 @@
     transform-origin: var(--yl-container-transform-origin);
     transition: var(--yl-container-transition);
     transition-property: var(--yl-container-transition-property);
+
+    box-sizing: var(--yl-container-box-sizing);
   }
 }

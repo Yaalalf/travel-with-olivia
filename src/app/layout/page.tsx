@@ -69,7 +69,9 @@ export default function Layout() {
           inlineSize="600px"
           textAlign={alignItems[1]}
           textTransform={textTransforms[1]}
-          containerStyle={{ mediaQuery: { "360-1024": { inlineSize: "90%" } } }}
+          theme={{
+            container: { mediaQuery: { "360-1024": { inlineSize: "90%" } } },
+          }}
         />
       ),
     },

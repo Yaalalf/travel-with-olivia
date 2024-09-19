@@ -1,5 +1,6 @@
 @layer yl-layout{
     @media (1024px <= width < 1280px){
+      
       /**********************Vars****************************/
       /**********************************************************/
     .yl-flex-container{
@@ -10,5 +11,91 @@
   .yl-flex-container{
     flex-direction: var(--yl-flex-container-flex-direction-1024-1280);align-items: var(--yl-flex-container-align-items-1024-1280);justify-content: var(--yl-flex-container-justify-content-1024-1280);gap: var(--yl-flex-container-gap-1024-1280);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280); 
       } 
+  
+
+      
+      /**********************HoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-hover : var(--yl-flex-container-flex-direction-1024-1920-hover);--yl-flex-container-align-items-1024-1280-hover : var(--yl-flex-container-align-items-1024-1920-hover);--yl-flex-container-justify-content-1024-1280-hover : var(--yl-flex-container-justify-content-1024-1920-hover);--yl-flex-container-gap-1024-1280-hover : var(--yl-flex-container-gap-1024-1920-hover);--yl-flex-container-flex-wrap-1024-1280-hover : var(--yl-flex-container-flex-wrap-1024-1920-hover); 
+  } 
+  /**************************HoverStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:hover{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-hover);align-items: var(--yl-flex-container-align-items-1024-1280-hover);justify-content: var(--yl-flex-container-justify-content-1024-1280-hover);gap: var(--yl-flex-container-gap-1024-1280-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-hover); 
+      } 
+
+      [data-parent-hover="true"]:hover .yl-flex-container:hover{
+        flex-direction: var(--yl-flex-container-flex-direction-1024-1280-hover);align-items: var(--yl-flex-container-align-items-1024-1280-hover);justify-content: var(--yl-flex-container-justify-content-1024-1280-hover);gap: var(--yl-flex-container-gap-1024-1280-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-hover); 
+          }  
+ 
+      
+      /**********************ParentHoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-parent-hover : var(--yl-flex-container-flex-direction-1024-1920-parent-hover);--yl-flex-container-align-items-1024-1280-parent-hover : var(--yl-flex-container-align-items-1024-1920-parent-hover);--yl-flex-container-justify-content-1024-1280-parent-hover : var(--yl-flex-container-justify-content-1024-1920-parent-hover);--yl-flex-container-gap-1024-1280-parent-hover : var(--yl-flex-container-gap-1024-1920-parent-hover);--yl-flex-container-flex-wrap-1024-1280-parent-hover : var(--yl-flex-container-flex-wrap-1024-1920-parent-hover); 
+  } 
+  /**************************ParentHoverStyles********************************/
+  /**********************************************************/
+  [data-parent-hover="true"]:hover .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-parent-hover);align-items: var(--yl-flex-container-align-items-1024-1280-parent-hover);justify-content: var(--yl-flex-container-justify-content-1024-1280-parent-hover);gap: var(--yl-flex-container-gap-1024-1280-parent-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-parent-hover); 
+      } 
+  
+ 
+      
+      /**********************ChildHoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-child-hover : var(--yl-flex-container-flex-direction-1024-1920-child-hover);--yl-flex-container-align-items-1024-1280-child-hover : var(--yl-flex-container-align-items-1024-1920-child-hover);--yl-flex-container-justify-content-1024-1280-child-hover : var(--yl-flex-container-justify-content-1024-1920-child-hover);--yl-flex-container-gap-1024-1280-child-hover : var(--yl-flex-container-gap-1024-1920-child-hover);--yl-flex-container-flex-wrap-1024-1280-child-hover : var(--yl-flex-container-flex-wrap-1024-1920-child-hover); 
+  } 
+  /**************************ChildHoverStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:has([data-child-hover="true"]:hover) {
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-child-hover);align-items: var(--yl-flex-container-align-items-1024-1280-child-hover);justify-content: var(--yl-flex-container-justify-content-1024-1280-child-hover);gap: var(--yl-flex-container-gap-1024-1280-child-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-child-hover); 
+      } 
+  
+
+      
+      /**********************ActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-active : var(--yl-flex-container-flex-direction-1024-1920-active);--yl-flex-container-align-items-1024-1280-active : var(--yl-flex-container-align-items-1024-1920-active);--yl-flex-container-justify-content-1024-1280-active : var(--yl-flex-container-justify-content-1024-1920-active);--yl-flex-container-gap-1024-1280-active : var(--yl-flex-container-gap-1024-1920-active);--yl-flex-container-flex-wrap-1024-1280-active : var(--yl-flex-container-flex-wrap-1024-1920-active); 
+  } 
+  /**************************ActiveStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:active{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-active);align-items: var(--yl-flex-container-align-items-1024-1280-active);justify-content: var(--yl-flex-container-justify-content-1024-1280-active);gap: var(--yl-flex-container-gap-1024-1280-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-active); 
+      } 
+
+      [data-parent-active="true"]:active .yl-flex-container:hover{
+        flex-direction: var(--yl-flex-container-flex-direction-1024-1280-parent-active);align-items: var(--yl-flex-container-align-items-1024-1280-parent-active);justify-content: var(--yl-flex-container-justify-content-1024-1280-parent-active);gap: var(--yl-flex-container-gap-1024-1280-parent-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-parent-active); 
+          }  
+ 
+      
+      /**********************ParentActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-parent-active : var(--yl-flex-container-flex-direction-1024-1920-parent-active);--yl-flex-container-align-items-1024-1280-parent-active : var(--yl-flex-container-align-items-1024-1920-parent-active);--yl-flex-container-justify-content-1024-1280-parent-active : var(--yl-flex-container-justify-content-1024-1920-parent-active);--yl-flex-container-gap-1024-1280-parent-active : var(--yl-flex-container-gap-1024-1920-parent-active);--yl-flex-container-flex-wrap-1024-1280-parent-active : var(--yl-flex-container-flex-wrap-1024-1920-parent-active); 
+  } 
+  /**************************ParentActiveStyles********************************/
+  /**********************************************************/
+  [data-parent-active="true"]:active .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-parent-active);align-items: var(--yl-flex-container-align-items-1024-1280-parent-active);justify-content: var(--yl-flex-container-justify-content-1024-1280-parent-active);gap: var(--yl-flex-container-gap-1024-1280-parent-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-parent-active); 
+      } 
+  
+
+      
+      /**********************ChildActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1280-child-active : var(--yl-flex-container-flex-direction-1024-1920-child-active);--yl-flex-container-align-items-1024-1280-child-active : var(--yl-flex-container-align-items-1024-1920-child-active);--yl-flex-container-justify-content-1024-1280-child-active : var(--yl-flex-container-justify-content-1024-1920-child-active);--yl-flex-container-gap-1024-1280-child-active : var(--yl-flex-container-gap-1024-1920-child-active);--yl-flex-container-flex-wrap-1024-1280-child-active : var(--yl-flex-container-flex-wrap-1024-1920-child-active); 
+  } 
+  /**************************ChildActiveStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:has([data-child-active="true"]:active) {
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1280-child-active);align-items: var(--yl-flex-container-align-items-1024-1280-child-active);justify-content: var(--yl-flex-container-justify-content-1024-1280-child-active);gap: var(--yl-flex-container-gap-1024-1280-child-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1280-child-active); 
+      } 
+  
+
     } 
   }

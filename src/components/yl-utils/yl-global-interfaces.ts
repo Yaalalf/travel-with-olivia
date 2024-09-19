@@ -93,7 +93,7 @@ export interface IBackgroundColor {
 
 export interface IBackgroundImage {
   backgroundImage?: string;
-  backgroundRepeat?: EBackgroundRepeat;
+  backgroundRepeat?: BackgroundRepeat;
   backgroundPosition?: string;
   backgroundPositionX?: string;
   backgroundPositionY?: string;
@@ -103,20 +103,19 @@ export interface IBackgroundImage {
 
 export type BackgroundSizeValues = "cover" | "contain" | string;
 
-export enum EBackgroundRepeat {
-  repeat = "repeat",
-  repeatX = "repeat-x",
-  repeatY = "repeat-y",
-  space = "space",
-  round = "round",
-  noRepeat = "no-repeat",
-}
+export type BackgroundRepeat =
+  | "repeat"
+  | "repeat-x"
+  | "repeat-y"
+  | "space"
+  | "round"
+  | "no-repeat";
 
 /*******************************Mask*****************************************/
 
 export interface IMaskImage {
   maskImage?: string;
-  maskRepeat?: EBackgroundRepeat;
+  maskRepeat?: BackgroundRepeat;
   maskPosition?: string;
 
   maskSize?: string;
@@ -130,6 +129,13 @@ export interface IBoxShadow {
 export interface IFilter {
   filter?: string;
 }
+
+/*******************************BoxSizing*****************************************/
+export interface IBoxSizing {
+  boxSizing?: BoxSizing;
+}
+export type BoxSizing = "border-box" | "content-box";
+
 /*******************************Padding*****************************************/
 export interface IPadding {
   padding?: string;
@@ -227,6 +233,7 @@ export interface IText {
   textTransform?: TextTransform;
   textShadow?: string;
   textAlign?: TextAlign;
+  textDecoration?: string;
 }
 
 export type TextTransform = "capitalize" | "lowercase" | "uppercase" | "none";
@@ -284,12 +291,20 @@ export interface IList {
 /*******************************data-*****************************************/
 export interface IDataSet {
   dataParentHover?: boolean;
+  dataParentActive?: boolean;
+  dataChildHover?: boolean;
+  dataChildActive?: boolean;
 }
 
 /*******************************StateStyles*****************************************/
 export interface IStateStyles<ComponentStyle> {
   hoverStyle?: ComponentStyle;
   parentHoverStyle?: ComponentStyle;
+  childHoverStyle?: ComponentStyle;
+
+  activeStyle?: ComponentStyle;
+  parentActiveStyle?: ComponentStyle;
+  childActiveStyle?: ComponentStyle;
 }
 /*******************************HoverState*****************************************/
 
@@ -307,7 +322,44 @@ export type YLParentHoverStylePropNames<YLStyles extends string> =
   `${YLStyles}-parent-hover`;
 
 export type IYLParentHoverState<YLStyles extends string> = Record<
-  YLHoverStylePropNames<YLStyles>,
+  YLParentHoverStylePropNames<YLStyles>,
+  string
+>;
+/*******************************ParentHoverState*****************************************/
+
+export type YLChildHoverStylePropNames<YLStyles extends string> =
+  `${YLStyles}-parent-hover`;
+
+export type IYLChildHoverState<YLStyles extends string> = Record<
+  YLParentHoverStylePropNames<YLStyles>,
+  string
+>;
+/*******************************ActiveState*****************************************/
+
+export type YLActiveStylePropNames<YLStyles extends string> =
+  `${YLStyles}-active`;
+
+export type IYLActiveState<YLStyles extends string> = Record<
+  YLActiveStylePropNames<YLStyles>,
+  string
+>;
+
+/*******************************ParentActiveState*****************************************/
+
+export type YLParentActiveStylePropNames<YLStyles extends string> =
+  `${YLStyles}-parent-active`;
+
+export type IYLParentActiveState<YLStyles extends string> = Record<
+  YLParentActiveStylePropNames<YLStyles>,
+  string
+>;
+/*******************************ChildActiveState*****************************************/
+
+export type YLChildActiveStylePropNames<YLStyles extends string> =
+  `${YLStyles}-parent-active`;
+
+export type IYLChildActiveState<YLStyles extends string> = Record<
+  YLParentActiveStylePropNames<YLStyles>,
   string
 >;
 

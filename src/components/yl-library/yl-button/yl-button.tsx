@@ -34,7 +34,7 @@ export default forwardRef(function YLButton(
   const ylButtonContainerRef = useRef<HTMLDivElement>(null);
   const ylButtonRef = useRef<HTMLButtonElement>(null);
 
-  useRipple(ylButtonRef);
+  useRipple({ rippleTrigger: ylButtonRef });
 
   useImperativeHandle(
     ref,

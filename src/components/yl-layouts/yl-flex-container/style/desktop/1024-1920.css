@@ -1,5 +1,6 @@
 @layer yl-layout{
     @media (1024px <= width < 1920px){
+      
       /**********************Vars****************************/
       /**********************************************************/
     .yl-flex-container{
@@ -10,5 +11,91 @@
   .yl-flex-container{
     flex-direction: var(--yl-flex-container-flex-direction-1024-1920);align-items: var(--yl-flex-container-align-items-1024-1920);justify-content: var(--yl-flex-container-justify-content-1024-1920);gap: var(--yl-flex-container-gap-1024-1920);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920); 
       } 
+  
+
+      
+      /**********************HoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-hover : var(--yl-flex-container-flex-direction-hover);--yl-flex-container-align-items-1024-1920-hover : var(--yl-flex-container-align-items-hover);--yl-flex-container-justify-content-1024-1920-hover : var(--yl-flex-container-justify-content-hover);--yl-flex-container-gap-1024-1920-hover : var(--yl-flex-container-gap-hover);--yl-flex-container-flex-wrap-1024-1920-hover : var(--yl-flex-container-flex-wrap-hover); 
+  } 
+  /**************************HoverStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:hover{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-hover);align-items: var(--yl-flex-container-align-items-1024-1920-hover);justify-content: var(--yl-flex-container-justify-content-1024-1920-hover);gap: var(--yl-flex-container-gap-1024-1920-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-hover); 
+      } 
+
+      [data-parent-hover="true"]:hover .yl-flex-container:hover{
+        flex-direction: var(--yl-flex-container-flex-direction-1024-1920-hover);align-items: var(--yl-flex-container-align-items-1024-1920-hover);justify-content: var(--yl-flex-container-justify-content-1024-1920-hover);gap: var(--yl-flex-container-gap-1024-1920-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-hover); 
+          }  
+ 
+      
+      /**********************ParentHoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-parent-hover : var(--yl-flex-container-flex-direction-parent-hover);--yl-flex-container-align-items-1024-1920-parent-hover : var(--yl-flex-container-align-items-parent-hover);--yl-flex-container-justify-content-1024-1920-parent-hover : var(--yl-flex-container-justify-content-parent-hover);--yl-flex-container-gap-1024-1920-parent-hover : var(--yl-flex-container-gap-parent-hover);--yl-flex-container-flex-wrap-1024-1920-parent-hover : var(--yl-flex-container-flex-wrap-parent-hover); 
+  } 
+  /**************************ParentHoverStyles********************************/
+  /**********************************************************/
+  [data-parent-hover="true"]:hover .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-parent-hover);align-items: var(--yl-flex-container-align-items-1024-1920-parent-hover);justify-content: var(--yl-flex-container-justify-content-1024-1920-parent-hover);gap: var(--yl-flex-container-gap-1024-1920-parent-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-parent-hover); 
+      } 
+  
+ 
+      
+      /**********************ChildHoverVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-child-hover : var(--yl-flex-container-flex-direction-child-hover);--yl-flex-container-align-items-1024-1920-child-hover : var(--yl-flex-container-align-items-child-hover);--yl-flex-container-justify-content-1024-1920-child-hover : var(--yl-flex-container-justify-content-child-hover);--yl-flex-container-gap-1024-1920-child-hover : var(--yl-flex-container-gap-child-hover);--yl-flex-container-flex-wrap-1024-1920-child-hover : var(--yl-flex-container-flex-wrap-child-hover); 
+  } 
+  /**************************ChildHoverStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:has([data-child-hover="true"]:hover) {
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-child-hover);align-items: var(--yl-flex-container-align-items-1024-1920-child-hover);justify-content: var(--yl-flex-container-justify-content-1024-1920-child-hover);gap: var(--yl-flex-container-gap-1024-1920-child-hover);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-child-hover); 
+      } 
+  
+
+      
+      /**********************ActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-active : var(--yl-flex-container-flex-direction-active);--yl-flex-container-align-items-1024-1920-active : var(--yl-flex-container-align-items-active);--yl-flex-container-justify-content-1024-1920-active : var(--yl-flex-container-justify-content-active);--yl-flex-container-gap-1024-1920-active : var(--yl-flex-container-gap-active);--yl-flex-container-flex-wrap-1024-1920-active : var(--yl-flex-container-flex-wrap-active); 
+  } 
+  /**************************ActiveStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:active{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-active);align-items: var(--yl-flex-container-align-items-1024-1920-active);justify-content: var(--yl-flex-container-justify-content-1024-1920-active);gap: var(--yl-flex-container-gap-1024-1920-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-active); 
+      } 
+
+      [data-parent-active="true"]:active .yl-flex-container:hover{
+        flex-direction: var(--yl-flex-container-flex-direction-1024-1920-parent-active);align-items: var(--yl-flex-container-align-items-1024-1920-parent-active);justify-content: var(--yl-flex-container-justify-content-1024-1920-parent-active);gap: var(--yl-flex-container-gap-1024-1920-parent-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-parent-active); 
+          }  
+ 
+      
+      /**********************ParentActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-parent-active : var(--yl-flex-container-flex-direction-parent-active);--yl-flex-container-align-items-1024-1920-parent-active : var(--yl-flex-container-align-items-parent-active);--yl-flex-container-justify-content-1024-1920-parent-active : var(--yl-flex-container-justify-content-parent-active);--yl-flex-container-gap-1024-1920-parent-active : var(--yl-flex-container-gap-parent-active);--yl-flex-container-flex-wrap-1024-1920-parent-active : var(--yl-flex-container-flex-wrap-parent-active); 
+  } 
+  /**************************ParentActiveStyles********************************/
+  /**********************************************************/
+  [data-parent-active="true"]:active .yl-flex-container{
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-parent-active);align-items: var(--yl-flex-container-align-items-1024-1920-parent-active);justify-content: var(--yl-flex-container-justify-content-1024-1920-parent-active);gap: var(--yl-flex-container-gap-1024-1920-parent-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-parent-active); 
+      } 
+  
+
+      
+      /**********************ChildActiveVars****************************/
+      /**********************************************************/
+    .yl-flex-container{
+    --yl-flex-container-flex-direction-1024-1920-child-active : var(--yl-flex-container-flex-direction-child-active);--yl-flex-container-align-items-1024-1920-child-active : var(--yl-flex-container-align-items-child-active);--yl-flex-container-justify-content-1024-1920-child-active : var(--yl-flex-container-justify-content-child-active);--yl-flex-container-gap-1024-1920-child-active : var(--yl-flex-container-gap-child-active);--yl-flex-container-flex-wrap-1024-1920-child-active : var(--yl-flex-container-flex-wrap-child-active); 
+  } 
+  /**************************ChildActiveStyles********************************/
+  /**********************************************************/
+  .yl-flex-container:has([data-child-active="true"]:active) {
+    flex-direction: var(--yl-flex-container-flex-direction-1024-1920-child-active);align-items: var(--yl-flex-container-align-items-1024-1920-child-active);justify-content: var(--yl-flex-container-justify-content-1024-1920-child-active);gap: var(--yl-flex-container-gap-1024-1920-child-active);flex-wrap: var(--yl-flex-container-flex-wrap-1024-1920-child-active); 
+      } 
+  
+
     } 
   }

@@ -36,6 +36,9 @@ export default forwardRef(function YLContainer<
     tag = ETag.div,
 
     dataParentHover = false,
+    dataParentActive = false,
+    dataChildActive = false,
+    dataChildHover = false,
 
     onClick,
     onTransitionEnd,
@@ -89,6 +92,11 @@ export default forwardRef(function YLContainer<
 
     boxShadow,
 
+    color,
+    fontFamily,
+    fontSize,
+    fontWeight,
+
     rotate,
     scale,
     transform,
@@ -107,10 +115,18 @@ export default forwardRef(function YLContainer<
     userSelect,
     cursor,
     zIndex,
+    boxSizing,
 
     mediaQuery = {},
+
     hoverStyle = {},
     parentHoverStyle = {},
+    childHoverStyle = {},
+
+    activeStyle = {},
+    parentActiveStyle = {},
+    childActiveStyle = {},
+
     extendedStyles = {},
   }: IYLContainerProps,
   ref: ForwardedRef<T>
@@ -176,6 +192,11 @@ export default forwardRef(function YLContainer<
       backgroundColor,
       boxShadow,
 
+      color,
+      fontFamily,
+      fontSize,
+      fontWeight,
+
       rotate,
       scale,
       transform,
@@ -192,18 +213,27 @@ export default forwardRef(function YLContainer<
       cursor,
       zIndex,
       userSelect,
+      boxSizing,
     },
     mediaQuery,
     initProps,
   });
 
-  const { hoverStyles, parentHoverStyles } = useYLComponentStateStylesVars<
-    YLContainerStyle,
-    IYLContainerStyleProps
-  >({
+  const {
+    activeStyles,
+    hoverStyles,
+    parentActiveStyles,
+    parentHoverStyles,
+    childActiveStyles,
+    childHoverStyles,
+  } = useYLComponentStateStylesVars<YLContainerStyle, IYLContainerStyleProps>({
     name: EYLComponentsNames.YL_CONTAINER,
     hoverStyle,
     parentHoverStyle,
+    childHoverStyle,
+    activeStyle,
+    parentActiveStyle,
+    childActiveStyle,
     initProps,
   });
   return ContainerFactory(
@@ -212,10 +242,22 @@ export default forwardRef(function YLContainer<
       className,
       tag,
       dataParentHover,
+      dataParentActive,
+      dataChildActive,
+      dataChildHover,
       onClick,
       onTransitionEnd,
     },
-    { ...styles, ...hoverStyles, ...parentHoverStyles, ...extendedStyles },
+    {
+      ...styles,
+      ...activeStyles,
+      ...hoverStyles,
+      ...parentActiveStyles,
+      ...parentHoverStyles,
+      ...childActiveStyles,
+      ...childHoverStyles,
+      ...extendedStyles,
+    },
     ref
   );
 });
@@ -228,76 +270,65 @@ function ContainerFactory<T>(
     | "onClick"
     | "onTransitionEnd"
     | "dataParentHover"
+    | "dataParentActive"
+    | "dataChildActive"
+    | "dataChildHover"
   >,
   styles: YLComponentMediaQueryStyle<YLContainerStyle>,
   ref: ForwardedRef<T>
 ): ReactNode {
-  const dataListObj = props.dataParentHover && { ["data-parent-hover"]: true };
+  let dataListObj: any = {};
+
+  props.dataParentHover && (dataListObj["data-parent-hover"] = true);
+  props.dataParentActive && (dataListObj["data-parent-active"] = true);
+  props.dataChildHover && (dataListObj["data-child-hover"] = true);
+  props.dataChildActive && (dataListObj["data-child-active"] = true);
+
+  const propsObject = {
+    className: `yl-container ${props.className || ""}`,
+    style: styles as CSSProperties,
+    onClick: props.onClick,
+    onTransitionEnd: props.onTransitionEnd,
+    ...dataListObj,
+  };
+
   switch (props.tag) {
     case ETag.div:
       return (
-        <div
-          ref={ref as LegacyRef<HTMLDivElement>}
-          className={`yl-container ${props.className || ""}`}
-          style={styles as CSSProperties}
-          onClick={props.onClick}
-          onTransitionEnd={props.onTransitionEnd}
-          {...dataListObj}
-        >
+        <div ref={ref as LegacyRef<HTMLDivElement>} {...propsObject}>
           {props.children}
         </div>
       );
     case ETag.section:
       return (
-        <section
-          ref={ref as LegacyRef<HTMLDivElement>}
-          className={`yl-container ${props.className || ""}`}
-          style={styles as CSSProperties}
-          onClick={props.onClick}
-          onTransitionEnd={props.onTransitionEnd}
-          {...dataListObj}
-        >
+        <section ref={ref as LegacyRef<HTMLDivElement>} {...propsObject}>
           {props.children}
         </section>
       );
     case ETag.article:
       return (
-        <article
-          ref={ref as LegacyRef<HTMLDivElement>}
-          className={`yl-container ${props.className || ""}`}
-          style={styles as CSSProperties}
-          onClick={props.onClick}
-          onTransitionEnd={props.onTransitionEnd}
-          {...dataListObj}
-        >
+        <article ref={ref as LegacyRef<HTMLDivElement>} {...propsObject}>
           {props.children}
         </article>
       );
     case ETag.ul:
       return (
-        <ul
-          ref={ref as LegacyRef<HTMLUListElement>}
-          className={`yl-container ${props.className || ""}`}
-          style={styles as CSSProperties}
-          onClick={props.onClick}
-          onTransitionEnd={props.onTransitionEnd}
-          {...dataListObj}
-        >
+        <ul ref={ref as LegacyRef<HTMLUListElement>} {...propsObject}>
           {props.children}
         </ul>
       );
     case ETag.button:
       return (
-        <button
-          ref={ref as LegacyRef<HTMLButtonElement>}
-          className={`yl-container ${props.className || ""}`}
-          style={styles as CSSProperties}
-          onClick={props.onClick}
-          onTransitionEnd={props.onTransitionEnd}
-          {...dataListObj}
-        >
+        <button ref={ref as LegacyRef<HTMLButtonElement>} {...propsObject}>
           {props.children}
         </button>
+      );
+
+    case ETag.span:
+      return (
+        <span ref={ref as LegacyRef<HTMLSpanElement>} {...propsObject}>
+          {props.children}
+        </span>
       );
   }
 }

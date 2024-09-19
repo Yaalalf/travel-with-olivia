@@ -7,12 +7,58 @@ import {
   IYLMaskedImageStyleProps,
   YLMaskedImageStyle,
 } from "./types";
+import { splitMediaQueryObject } from "@/components/yl-utils/yl-utils";
+import YlContainer from "../yl-container/yl-container";
 export function YLMaskedImage({
   className,
 
-  blockSize,
+  onClick,
+  onTransitionEnd,
+  tag,
+  dataParentHover,
+  dataParentActive,
+
   inlineSize,
+  minInlineSize,
+  maxInlineSize,
+  blockSize,
+  minBlockSize,
+  maxBlockSize,
+
+  padding,
+  paddingBlock,
+  paddingBlockEnd,
+  paddingBlockStart,
+  paddingInline,
+  paddingInlineEnd,
+  paddingInlineStart,
+
+  margin,
+  marginBlock,
+  marginBlockEnd,
+  marginBlockStart,
+  marginInline,
+  marginInlineEnd,
+  marginInlineStart,
+
+  display,
+
+  border,
+  borderBlock,
+  borderBlockEnd,
+  borderBlockStart,
+  borderInline,
+  borderInlineEnd,
+  borderInlineStart,
+
+  borderRadius,
+  borderEndEndRadius,
+  borderEndStartRadius,
+  borderStartEndRadius,
+  borderStartStartRadius,
+
   backgroundColor,
+  boxShadow,
 
   maskImage,
   maskPosition,
@@ -25,43 +71,136 @@ export function YLMaskedImage({
   right,
   top,
 
-  zIndex,
+  rotate,
+  scale,
+  transform,
+  translate,
+  filter,
+  transformStyle,
+  transition,
+  transitionProperty,
+  transformOrigin,
 
+  opacity,
+  overflow,
+  cursor,
+  zIndex,
+  userSelect,
   mediaQuery = {},
+  extendedStyles = {},
+
+  activeStyle,
+  hoverStyle,
+  parentActiveStyle,
+  parentHoverStyle,
 }: IYLMaskedImageProps) {
+  const [stylesMediaQuery, stylesExtendedMediaQuery] = splitMediaQueryObject(
+    mediaQuery,
+    ["maskImage", "maskPosition", "maskRepeat", "maskSize"]
+  );
+
+  const stylesExtendedProps = {
+    inlineSize,
+    minInlineSize,
+    maxInlineSize,
+    blockSize,
+    minBlockSize,
+    maxBlockSize,
+
+    padding,
+    paddingBlock,
+    paddingBlockEnd,
+    paddingBlockStart,
+    paddingInline,
+    paddingInlineEnd,
+    paddingInlineStart,
+
+    margin,
+    marginBlock,
+    marginBlockEnd,
+    marginBlockStart,
+    marginInline,
+    marginInlineEnd,
+    marginInlineStart,
+
+    display,
+
+    border,
+    borderBlock,
+    borderBlockEnd,
+    borderBlockStart,
+    borderInline,
+    borderInlineEnd,
+    borderInlineStart,
+
+    borderRadius,
+    borderEndEndRadius,
+    borderEndStartRadius,
+    borderStartEndRadius,
+    borderStartStartRadius,
+
+    bottom,
+    left,
+    position,
+    right,
+    top,
+
+    backgroundColor,
+    boxShadow,
+
+    rotate,
+    scale,
+    transform,
+    translate,
+
+    filter,
+    transformStyle,
+
+    transition,
+    transitionProperty,
+    transformOrigin,
+
+    opacity,
+    overflow,
+    cursor,
+    zIndex,
+    userSelect,
+
+    activeStyle,
+    hoverStyle,
+    parentActiveStyle,
+    parentHoverStyle,
+  };
+
+  const domProps = {
+    onClick,
+    onTransitionEnd,
+    tag,
+    dataParentHover,
+    dataParentActive,
+  };
+
   const { styles } = useYLComponentStyleMediaQueryVars<
     YLMaskedImageStyle,
     IYLMaskedImageStyleProps
   >({
     name: EYLComponentsNames.YL_MASKED_IMAGE,
     props: {
-      inlineSize,
-      blockSize,
-      backgroundColor,
-
       maskImage,
       maskPosition,
       maskRepeat,
       maskSize,
-      bottom,
-      left,
-      position,
-      right,
-      top,
-
-      zIndex,
     },
-    mediaQuery: mediaQuery,
+    mediaQuery: stylesMediaQuery,
   });
 
   return (
-    <div
+    <YlContainer
       className={`yl-masked-image ${className || ""}`}
-      style={
-        {
-          ...styles,
-        } as React.CSSProperties
-      }
-    ></div>
+      {...stylesExtendedProps}
+      mediaQuery={stylesExtendedMediaQuery}
+      {...domProps}
+      extendedStyles={{ ...styles, ...extendedStyles }}
+    ></YlContainer>
   );
 }

@@ -10,6 +10,7 @@ import {
   IDimension,
   IMargin,
   IPadding,
+  IStateStyles,
   ITag,
   IText,
   IYLMediaQuery,
@@ -46,6 +47,7 @@ export type YLTextStyle = `${YLTextName}-${Extract<
   | `${EYLCSSProperties.textTransform}`
   | `${EYLCSSProperties.textShadow}`
   | `${EYLCSSProperties.textAlign}`
+  | `${EYLCSSProperties.textDecoration}`
 >}`;
 
 export interface IYLTextStyle extends Partial<Record<YLTextStyle, string>> {}
@@ -61,5 +63,6 @@ export interface IYLTextStyleProps
   extends Partial<IDimension>,
     IPadding,
     IMargin,
+    IText,
     IYLMediaQuery<IYLTextStyleProps>,
-    IText {}
+    IStateStyles<IYLTextStyleProps> {}

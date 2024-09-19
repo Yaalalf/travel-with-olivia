@@ -12,12 +12,14 @@ import {
   IYLTextHeaderStyleProps,
 } from "@/components/yl-layouts/yl-text-header/types";
 import {
+  ETag,
   IClassName,
   IFlexChild,
   TextAlign,
   TextTransform,
 } from "@/components/yl-utils/yl-global-interfaces";
 import { ReactNode } from "react";
+import YlContainer from "@/components/yl-layouts/yl-container/yl-container";
 
 export default function YLTitleHeaderDoubleText({
   className,
@@ -29,41 +31,39 @@ export default function YLTitleHeaderDoubleText({
   textAlign = "left",
   textTransform = "none",
 
-  containerStyle,
-  primaryTitleStyle,
-  secondaryTitleStyle,
+  theme,
 }: IYLTitleHeaderDoubleTextProps) {
   return (
     <YLFlexContainer
       className={`${className || ""} yl-title-header-double-text`}
       {...defaultContainerStyle}
       {...{ inlineSize }}
-      {...containerStyle}
+      {...theme?.container}
     >
       <YLFlexItem
         className="yl-title-header-double-text-primary-container"
-        order={primaryTitleStyle?.order}
+        order={theme?.primaryTitle?.order}
         inlineSize="100%"
       >
         <YLTextHeader
           className="yl-title-header-double-text-primary-text"
           {...defaultPrimaryTitleStyle}
           {...{ textAlign, textTransform }}
-          {...primaryTitleStyle}
+          {...theme?.primaryTitle}
         >
           {primaryText}
         </YLTextHeader>
       </YLFlexItem>
       <YLFlexItem
         className="yl-title-header-double-text-secondary-container"
-        order={secondaryTitleStyle?.order}
+        order={theme?.secondaryTitle?.order}
         inlineSize="100%"
       >
         <YLTextHeader
           className="yl-title-header-double-text-secondary-text"
           {...defaultSecondaryTitleStyle}
           {...{ textAlign, textTransform }}
-          {...secondaryTitleStyle}
+          {...theme?.secondaryTitle}
         >
           {secondaryText}
         </YLTextHeader>
@@ -128,10 +128,13 @@ export interface IYLTitleHeaderDoubleTextProps extends IClassName {
   textTransform?: TextTransform;
   inlineSize?: string;
 
-  containerStyle?: IYLFlexContainerProps;
+  theme?: IYLTitleHeaderDoubleTextTheme;
+}
 
-  primaryTitleStyle?: IYLTitleStyle;
-  secondaryTitleStyle?: IYLTitleStyle;
+export interface IYLTitleHeaderDoubleTextTheme {
+  container?: IYLFlexContainerProps;
+  primaryTitle?: IYLTitleStyle;
+  secondaryTitle?: IYLTitleStyle;
 }
 
 export interface IYLTitleStyle extends IYLTextHeaderProps, IFlexChild {}

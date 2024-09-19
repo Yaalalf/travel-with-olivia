@@ -17,6 +17,10 @@ export default forwardRef(function YLFlexContainer(
     className,
     tag,
     dataParentHover,
+    dataParentActive,
+    dataChildActive,
+    dataChildHover,
+
     onClick,
     onTransitionEnd,
 
@@ -68,6 +72,11 @@ export default forwardRef(function YLFlexContainer(
     backgroundColor,
     boxShadow,
 
+    color,
+    fontFamily,
+    fontSize,
+    fontWeight,
+
     alignItems,
     flexDirection,
     flexWrap,
@@ -89,7 +98,16 @@ export default forwardRef(function YLFlexContainer(
     cursor,
     zIndex,
     userSelect,
+    boxSizing,
     mediaQuery = {},
+    hoverStyle = {},
+    parentHoverStyle = {},
+    childHoverStyle = {},
+
+    activeStyle = {},
+    parentActiveStyle = {},
+    childActiveStyle = {},
+
     extendedStyles = {},
   }: IYLFlexContainerProps,
   ref: ForwardedRef<HTMLDivElement>
@@ -148,6 +166,11 @@ export default forwardRef(function YLFlexContainer(
     backgroundColor,
     boxShadow,
 
+    color,
+    fontFamily,
+    fontSize,
+    fontWeight,
+
     rotate,
     scale,
     transform,
@@ -165,12 +188,23 @@ export default forwardRef(function YLFlexContainer(
     cursor,
     zIndex,
     userSelect,
+    boxSizing,
+
+    hoverStyle,
+    parentHoverStyle,
+    childHoverStyle,
+    activeStyle,
+    parentActiveStyle,
+    childActiveStyle,
   };
   const domProps = {
     onClick,
     onTransitionEnd,
     tag,
     dataParentHover,
+    dataParentActive,
+    dataChildActive,
+    dataChildHover,
   };
 
   const { styles } = useYLComponentStyleMediaQueryVars<

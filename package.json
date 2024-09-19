@@ -7,19 +7,30 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cssForComponent": "node ./src/components/yl-scripts/yl-create-css-for-components.mjs"
+    "cssForComponent": "node ./src/components/yl-scripts/yl-create-css-for-components.mjs",
+    "cssForAllComponent": "node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-flex-container && node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-container && node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-text && node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-text-header && node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-decorator-image && node ./src/components/yl-scripts/yl-create-css-for-components.mjs ./src/components/yl-layouts/yl-masked-image"
   },
   "dependencies": {
+    "@types/chroma-js": "^2.4.4",
+    "chroma-js": "^3.1.1",
+    "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@babel/generator": "^7.25.6",
+    "@babel/parser": "^7.25.6",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/template": "^7.25.0",
+    "@babel/traverse": "^7.25.6",
+    "@babel/types": "^7.25.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^10.0.0",
     "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5",
+    "uuid": "^10.0.0"
   }
 }

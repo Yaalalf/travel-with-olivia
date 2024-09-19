@@ -16,24 +16,24 @@ export default function YLTitleHeaderDoubleTextInvert({
   textAlign,
   textTransform,
 
-  containerStyle,
-  primaryTitleStyle,
-  secondaryTitleStyle,
+  theme,
 }: IYLTitleHeaderDoubleTextInvert) {
   return (
     <YLTitleHeaderDoubleText
       className={`${className || ""} yl-title-header-double-text-invert`}
       {...{ textAlign, textTransform, inlineSize, primaryText, secondaryText }}
-      containerStyle={{ ...defaultContainerStyle, ...containerStyle }}
-      primaryTitleStyle={{
-        ...defaultPrimaryTitleStyle,
-        ...primaryTitleStyle,
-        order: invert ? "2" : "1",
-      }}
-      secondaryTitleStyle={{
-        ...defaultSecondaryTitleStyle,
-        ...secondaryTitleStyle,
-        order: invert ? "1" : "2",
+      theme={{
+        container: { ...defaultContainerStyle, ...theme?.container },
+        primaryTitle: {
+          ...defaultPrimaryTitleStyle,
+          ...theme?.primaryTitle,
+          order: invert ? "2" : "1",
+        },
+        secondaryTitle: {
+          ...defaultSecondaryTitleStyle,
+          ...theme?.secondaryTitle,
+          order: invert ? "1" : "2",
+        },
       }}
     ></YLTitleHeaderDoubleText>
   );

@@ -17,6 +17,7 @@ import {
   initPaddingValues,
 } from "@/components/yl-utils/yl-utils";
 import { ETag } from "@/components/yl-utils/yl-global-interfaces";
+import { useYLComponentStateStylesVars } from "@/components/yl-hooks/use-style-state-vars";
 export default function YLTextHeader({
   children,
   className,
@@ -24,6 +25,10 @@ export default function YLTextHeader({
 
   inlineSize,
   blockSize,
+  maxBlockSize,
+  maxInlineSize,
+  minBlockSize,
+  minInlineSize,
 
   padding,
   paddingBlock,
@@ -49,9 +54,21 @@ export default function YLTextHeader({
   textTransform,
   textShadow,
   textAlign,
+  textDecoration,
 
   mediaQuery = {},
+  hoverStyle = {},
+  parentHoverStyle = {},
+  childHoverStyle = {},
+  activeStyle = {},
+  parentActiveStyle = {},
+  childActiveStyle = {},
 }: IYLTextHeaderProps) {
+  const initProps = (props: IYLTextHeaderProps) => {
+    initPaddingValues(props);
+    initMarginValues(props);
+  };
+
   const { styles } = useYLComponentStyleMediaQueryVars<
     YLTextHeaderStyle,
     IYLTextHeaderStyleProps
@@ -59,6 +76,10 @@ export default function YLTextHeader({
     name: EYLComponentsNames.YL_TEXT_HEADER,
     props: {
       blockSize,
+      maxBlockSize,
+      maxInlineSize,
+      minBlockSize,
+      minInlineSize,
       color,
       fontFamily,
       fontSize,
@@ -82,13 +103,23 @@ export default function YLTextHeader({
       textAlign,
       textShadow,
       textTransform,
+      textDecoration,
     },
     mediaQuery: mediaQuery,
-    initProps: (props) => {
-      initPaddingValues(props);
-      initMarginValues(props);
-    },
+    initProps,
   });
+
+  const { hoverStyles, parentHoverStyles, activeStyles, parentActiveStyles } =
+    useYLComponentStateStylesVars<YLTextHeaderStyle, IYLTextHeaderStyleProps>({
+      name: EYLComponentsNames.YL_TEXT,
+      hoverStyle,
+      parentHoverStyle,
+      childHoverStyle,
+      activeStyle,
+      parentActiveStyle,
+      childActiveStyle,
+      initProps,
+    });
 
   return HFactory(
     {
@@ -96,7 +127,13 @@ export default function YLTextHeader({
       className,
       tag,
     },
-    styles
+    {
+      ...styles,
+      ...hoverStyles,
+      ...parentHoverStyles,
+      ...activeStyles,
+      ...parentActiveStyles,
+    }
   );
 }
 
